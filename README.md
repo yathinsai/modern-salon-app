@@ -5,7 +5,7 @@ A modern, responsive web application for booking premium salon services with an 
 ## Project Structure
 
 ```
-salon-app/
+modern-salon-app/
 ├── src/
 │   ├── index.html                 # Main landing page
 │   ├── pages/
@@ -14,11 +14,12 @@ salon-app/
 │   │   ├── 03-eco-premium-booking-interface.html
 │   │   ├── 04-stylist-selection-veridia-salon.html
 │   │   └── 05-booking-confirmation-veridia-salon.html
-│   └── phase2/
-│       ├── 01-about-salon.html
-│       ├── 02-contact-location.html
-│       ├── 03-gallery-salon.html
-│       └── 04-reviews.html
+│   |   ├── 01-about-salon.html
+│   |   ├── 02-contact-location.html
+│   |   ├── 03-gallery-salon.html
+│   |   └── 04-reviews.html
+│   └── admin/
+│       └── index.html
 ├── server.js                      # Express server
 ├── package.json                   # Node.js dependencies
 └── README.md                      # This file
@@ -28,7 +29,7 @@ salon-app/
 
 1. **Clone or navigate to the project directory:**
    ```bash
-   cd salon-app
+   cd modern-salon-app
    ```
 
 2. **Install dependencies:**
@@ -96,6 +97,9 @@ To add new pages:
 2. Update `src/index.html` with links to new pages
 3. Restart the server to see changes
 
+## Commands
+```sh
+pkill -f "node server.js" && pkill -f "json-server" && sleep 1 && echo "Cleaned up"
+```
 ## License
-
 MIT
