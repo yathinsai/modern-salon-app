@@ -1,15 +1,16 @@
-document
+function bookAppointment() {
+    document
     .getElementById("appointmentForm")
     .addEventListener("submit", function (e) {
         e.preventDefault();
-
+        
         const appointment = {
             name: document.getElementById("name").value,
             stylist: document.getElementById("stylist").value,
             date: document.getElementById("date").value,
             time: document.getElementById("time").value,
         };
-
+        
         fetch("http://localhost:3000/appointments", {
             method: "POST",
             headers: {
@@ -17,12 +18,13 @@ document
             },
             body: JSON.stringify(appointment),
         })
-            .then((response) => response.json())
-            .then((data) => {
-                alert("Appointment Booked!");
-                console.log(data);
-            });
+        .then((response) => response.json())
+        .then((data) => {
+            alert("Appointment Booked!");
+            console.log(data);
+        });
     });
+}
 
 function fetchAppointments() {
     fetch("http://localhost:3000/appointments")
