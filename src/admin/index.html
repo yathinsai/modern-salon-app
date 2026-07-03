@@ -1,0 +1,41 @@
+<h2>Appointments</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Barber</th>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+
+    <tbody id="appointmentTable">
+    </tbody>
+</table>
+
+<button onclick="getAppointments()">Load Appointments</button>
+<script>
+async function getAppointments() {
+    const response = await fetch("http://localhost:3000/appointments");
+    const appointments = await response.json();
+
+    const table = document.getElementById("appointmentTable");
+    table.innerHTML = "";
+
+    appointments.forEach(appointment => {
+        table.innerHTML += `
+            <tr>
+                <td>${appointment.name}</td>
+                <td>${appointment.stylist}</td>
+                <td>${appointment.service}</td>
+                <td>${appointment.date}</td>
+                <td>${appointment.time}</td>
+            </tr>
+        `;
+    });
+}
+
+// getAppointments();
+</script>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Veridia Salon Catalog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;700&display=swap');
+
+    :root {
+      --primary-green: #00AB8E;
+      --secondary-gold: #F0B13D;
+      --structural-grey: #929292;
+    }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .editorial-serif {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    .cube-border::after {
+      content: '';
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 40px;
+      height: 40px;
+      border-top: 3px solid var(--secondary-gold);
+      border-right: 3px solid var(--secondary-gold);
+      z-index: 10;
+    }
+
+    .orange-glow {
+      box-shadow: 0 0 25px rgba(240, 177, 61, 0.3);
+    }
+
+    .service-category-card {
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .service-category-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 60px rgba(0, 171, 142, 0.15);
+    }
+
+    .bridge-line {
+      height: 2px;
+      background: linear-gradient(90deg, #00AB8E, #F0B13D);
+      opacity: 0.3;
+      width: 100%;
+    }
+
+    .step-number {
+      background: linear-gradient(135deg, var(--primary-green) 0%, #005c4b 100%);
+    }
+
+    .geometric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      opacity: 0.05;
+    }
+  </style>
+  <style>sd-component { display: block; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.js" defer init></script>
+</head>
+<body>
+  <div class="min-h-screen bg-white">
+    <!-- Navigation -->
+    <!-- component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+<div v-scope="{ ...{&quot;activeItem&quot;:&quot;services&quot;,&quot;homeHref&quot;:&quot;../&quot;,&quot;servicesHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;stylistsHref&quot;:&quot;./04-stylist-selection-veridia-salon.html&quot;,&quot;galleryHref&quot;:&quot;./03-gallery-salon.html&quot;,&quot;aboutHref&quot;:&quot;./01-about-salon.html&quot;,&quot;reviewsHref&quot;:&quot;./04-reviews.html&quot;,&quot;contactHref&quot;:&quot;./02-contact-location.html&quot;,&quot;bookHref&quot;:&quot;./03-eco-premium-booking-interface.html&quot;}, $emit() {} }">
+<nav class="fixed top-0 left-0 right-0 h-[80px] bg-white/95 backdrop-blur-[12px] border-b border-[#929292]/20 z-50 flex items-center justify-between px-12">
+  <a :href="homeHref" class="flex items-center gap-2 decoration-transparent">
+    <div class="w-8 h-8 bg-[#00AB8E] rounded-sm rotate-45 flex items-center justify-center">
+      <iconify-icon icon="lucide:leaf" class="text-white -rotate-45 text-sm"></iconify-icon>
+    </div>
+    <span class="text-xl font-bold tracking-tighter text-[#0a0a0a]">VERIDIA<span class="text-[#00AB8E]">.</span></span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-10">
+    <a :href="servicesHref" :class="activeItem === 'services' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Services</a>
+    <a :href="stylistsHref" :class="activeItem === 'stylists' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Stylists</a>
+    <a :href="galleryHref" :class="activeItem === 'gallery' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Gallery</a>
+    <a :href="aboutHref" :class="activeItem === 'about' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">About</a>
+    <a :href="reviewsHref" :class="activeItem === 'reviews' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Reviews</a>
+    <a :href="contactHref" :class="activeItem === 'contact' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Contact Us</a>
+  </div>
+
+  <a :href="bookHref" class="px-8 py-3 bg-[#00AB8E] text-white rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#00967d] transition-all">
+    Book Appointment
+  </a>
+</nav>
+</div>
+<!-- /component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+
+    <!-- Breadcrumb & Hero -->
+    <section class="pt-40 pb-24 px-12 lg:px-24">
+      <nav class="mb-12">
+        <ol class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-[#929292]">
+          <li><a href="#" id="breadcrumb-home" class="hover:text-[#00AB8E]">Home</a></li>
+          <li><iconify-icon icon="lucide:chevron-right" class="text-xs"></iconify-icon></li>
+          <li class="text-[#0a0a0a]">Services</li>
+        </ol>
+      </nav>
+
+      <div class="grid lg:grid-cols-[60%_40%] gap-16 items-center">
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-3 bg-[#00AB8E]/10 px-4 py-2 rounded-full">
+            <iconify-icon icon="lucide:sparkles" class="text-[#00AB8E]"></iconify-icon>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#00AB8E]">Next-Gen Hair Artistry</span>
+          </div>
+          <h1 class="text-7xl font-bold text-[#0a0a0a] leading-[1.1] tracking-tight">
+            Our <span class="editorial-serif font-serif italic font-bold">Services</span>.<br/>
+            Botanical Precision.
+          </h1>
+          <p class="text-[#929292] text-xl max-w-xl leading-relaxed">
+            Trendy, tech-forward hair artistry meets ecological commitment. Explore our curated selection of high-end botanical treatments designed for the modern aesthetic.
+          </p>
+          <div class="flex gap-6">
+            <a href="#categories" id="cta-explore-services" class="px-10 py-5 bg-[#00AB8E] text-white rounded-full text-[14px] font-bold uppercase tracking-widest orange-glow hover:scale-105 transition-transform">
+              Explore Categories
+            </a>
+            <a href="https://draft-0b68644e-1434-4395-937c-b38add6e8769.preview.superdesign.dev" id="cta-book-direct" class="px-10 py-5 border-2 border-[#929292]/30 text-[#0a0a0a] rounded-full text-[14px] font-bold uppercase tracking-widest hover:border-[#0a0a0a] transition-colors">
+              Book Now
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="relative rounded-3xl overflow-hidden cube-border shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=2026&auto=format&fit=crop" alt="Salon Artistry" class="w-full aspect-[4/5] object-cover">
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-[#F0B13D] p-6 rounded-2xl shadow-xl min-w-[200px]">
+             <div class="text-white space-y-2">
+                <span class="block text-xs uppercase font-bold tracking-widest opacity-80">Salon Status</span>
+                <span class="block text-xl font-bold">Eco-Certified Gold</span>
+                <div class="flex gap-1">
+                   <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+                   <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+                   <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+                   <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+                   <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2x2 Service Grid -->
+    <section id="categories" class="py-32 bg-[#929292]/5 px-12 lg:px-24">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-[12px] font-bold uppercase tracking-[0.2em] text-[#00AB8E]">The Catalog</span>
+        <h2 class="text-5xl font-bold mt-4 tracking-tight">Curated Artistry</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- 1. Hair Cutting -->
+        <div class="service-category-card bg-white rounded-[48px] overflow-hidden border border-[#929292]/10 flex flex-col group hover:ring-2 hover:ring-[#00AB8E]">
+           <div class="relative aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1620331311520-246422ff83f9?q=80&w=2069&auto=format&fit=crop" alt="Hair Cutting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+           </div>
+           <div class="p-12 flex flex-col flex-grow">
+              <div class="flex justify-between items-start mb-8">
+                 <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#00AB8E] block mb-2">Precision</span>
+                    <h3 class="text-3xl font-bold">Hair Cutting</h3>
+                 </div>
+                 <div class="text-right">
+                    <span class="block text-[10px] uppercase text-[#929292] font-bold">From</span>
+                    <span class="text-2xl font-bold">$85</span>
+                 </div>
+              </div>
+              <ul class="space-y-4 mb-12 flex-grow">
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:scissors" class="text-[#00AB8E]"></iconify-icon> Signature Cut & Style</li>
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:scissors" class="text-[#00AB8E]"></iconify-icon> Architectural Precision Trim</li>
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:scissors" class="text-[#00AB8E]"></iconify-icon> Editorial Trend Styles</li>
+              </ul>
+              <a href="https://draft-0b68644e-1434-4395-937c-b38add6e8769.preview.superdesign.dev" id="book-cutting" class="w-full py-4 bg-[#00AB8E] text-white text-center rounded-2xl font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">Book Cutting</a>
+           </div>
+        </div>
+
+        <!-- 2. Hair Coloring -->
+        <div class="service-category-card bg-white rounded-[48px] overflow-hidden border border-[#929292]/10 flex flex-col group hover:ring-2 hover:ring-[#F0B13D]">
+           <div class="relative aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop" alt="Hair Coloring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+           </div>
+           <div class="p-12 flex flex-col flex-grow">
+              <div class="flex justify-between items-start mb-8">
+                 <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#F0B13D] block mb-2">Vibrancy</span>
+                    <h3 class="text-3xl font-bold">Hair Coloring</h3>
+                 </div>
+                 <div class="text-right">
+                    <span class="block text-[10px] uppercase text-[#929292] font-bold">From</span>
+                    <span class="text-2xl font-bold">$185</span>
+                 </div>
+              </div>
+              <ul class="space-y-4 mb-12 flex-grow">
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:droplets" class="text-[#F0B13D]"></iconify-icon> Luminous Botanical Color</li>
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:droplets" class="text-[#F0B13D]"></iconify-icon> Dimensional Highlights</li>
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:droplets" class="text-[#F0B13D]"></iconify-icon> Master Color Correction</li>
+              </ul>
+              <a href="https://draft-0b68644e-1434-4395-937c-b38add6e8769.preview.superdesign.dev" id="book-coloring" class="w-full py-4 bg-[#F0B13D] text-white text-center rounded-2xl font-bold uppercase tracking-widest orange-glow hover:opacity-90 transition-opacity">Book Coloring</a>
+           </div>
+        </div>
+
+        <!-- 3. Styling -->
+        <div class="service-category-card bg-white rounded-[48px] overflow-hidden border border-[#929292]/10 flex flex-col group hover:ring-2 hover:ring-[#F0B13D]">
+           <div class="relative aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=2069&auto=format&fit=crop" alt="Hair Styling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+           </div>
+           <div class="p-12 flex flex-col flex-grow">
+              <div class="flex justify-between items-start mb-8">
+                 <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#F0B13D] block mb-2">Occasion</span>
+                    <h3 class="text-3xl font-bold">Creative Styling</h3>
+                 </div>
+                 <div class="text-right">
+                    <span class="block text-[10px] uppercase text-[#929292] font-bold">From</span>
+                    <span class="text-2xl font-bold">$65</span>
+                 </div>
+              </div>
+              <ul class="space-y-4 mb-12 flex-grow">
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:sparkles" class="text-[#F0B13D]"></iconify-icon> Signature Event Styling</li>
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:sparkles" class="text-[#F0B13D]"></iconify-icon> Botanical Blow-outs</li>
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:sparkles" class="text-[#F0B13D]"></iconify-icon> Luxe Bridal Artistry</li>
+              </ul>
+              <a href="https://draft-0b68644e-1434-4395-937c-b38add6e8769.preview.superdesign.dev" id="book-styling" class="w-full py-4 bg-[#F0B13D] text-white text-center rounded-2xl font-bold uppercase tracking-widest orange-glow hover:opacity-90 transition-opacity">Book Styling</a>
+           </div>
+        </div>
+
+        <!-- 4. Treatments -->
+        <div class="service-category-card bg-white rounded-[48px] overflow-hidden border border-[#929292]/10 flex flex-col group hover:ring-2 hover:ring-[#00AB8E]">
+           <div class="relative aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=2072&auto=format&fit=crop" alt="Treatments" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+           </div>
+           <div class="p-12 flex flex-col flex-grow">
+              <div class="flex justify-between items-start mb-8">
+                 <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#00AB8E] block mb-2">Restoration</span>
+                    <h3 class="text-3xl font-bold">Plant Therapy</h3>
+                 </div>
+                 <div class="text-right">
+                    <span class="block text-[10px] uppercase text-[#929292] font-bold">From</span>
+                    <span class="text-2xl font-bold">$95</span>
+                 </div>
+              </div>
+              <ul class="space-y-4 mb-12 flex-grow">
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:flower" class="text-[#00AB8E]"></iconify-icon> Deep Scalp Detoxification</li>
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:flower" class="text-[#00AB8E]"></iconify-icon> Molecular Damage Repair</li>
+                 <li class="flex items-center gap-3"><iconify-icon icon="lucide:flower" class="text-[#00AB8E]"></iconify-icon> Intensive Flora Hydration</li>
+              </ul>
+              <a href="https://draft-0b68644e-1434-4395-937c-b38add6e8769.preview.superdesign.dev" id="book-treatments" class="w-full py-4 bg-[#00AB8E] text-white text-center rounded-2xl font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">Book Treatment</a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Our Services -->
+    <section class="py-32 px-12 lg:px-24">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="editorial-serif italic text-3xl text-[#00AB8E] mb-6 block">Botanical Intelligence</span>
+        <h2 class="text-5xl font-bold tracking-tight">Why Choose Veridia</h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="p-10 bg-[#929292]/5 rounded-[40px] space-y-6">
+           <iconify-icon icon="lucide:leaf" class="text-4xl text-[#00AB8E]"></iconify-icon>
+           <h4 class="text-xl font-bold uppercase tracking-widest">100% Organic</h4>
+           <p class="text-sm text-[#929292] leading-relaxed">Only bio-adaptive plant extracts that respect your hair's biology.</p>
+        </div>
+        <div class="p-10 bg-[#929292]/5 rounded-[40px] space-y-6">
+           <iconify-icon icon="lucide:cpu" class="text-4xl text-[#F0B13D]"></iconify-icon>
+           <h4 class="text-xl font-bold uppercase tracking-widest">Tech-Guided</h4>
+           <p class="text-sm text-[#929292] leading-relaxed">Digital scalp mapping for data-backed treatment precision.</p>
+        </div>
+        <div class="p-10 bg-[#929292]/5 rounded-[40px] space-y-6">
+           <iconify-icon icon="lucide:award" class="text-4xl text-[#00AB8E]"></iconify-icon>
+           <h4 class="text-xl font-bold uppercase tracking-widest">Master Artists</h4>
+           <p class="text-sm text-[#929292] leading-relaxed">Creative directors trained in architectural cutting methods.</p>
+        </div>
+        <div class="p-10 bg-[#929292]/5 rounded-[40px] space-y-6">
+           <iconify-icon icon="lucide:shield-check" class="text-4xl text-[#F0B13D]"></iconify-icon>
+           <h4 class="text-xl font-bold uppercase tracking-widest">Safe Beauty</h4>
+           <p class="text-sm text-[#929292] leading-relaxed">Zero ammonia, zero sulfates, zero environmental compromises.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Process Ritual -->
+    <section class="py-32 bg-[#0a0a0a] text-white px-12 lg:px-24 overflow-hidden relative">
+       <!-- Geometric Grid Pattern -->
+      <div class="geometric-grid absolute inset-0 pointer-events-none">
+        <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+        <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+        <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+      </div>
+
+      <div class="relative z-10">
+        <div class="max-w-xl mb-24">
+          <span class="text-[12px] font-bold uppercase tracking-[0.2em] text-[#F0B13D]">The Artistic Ritual</span>
+          <h2 class="text-5xl font-bold mt-4 tracking-tight leading-tight">Every Journey is <br/>Architectural.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-16 relative">
+          <!-- Steps -->
+          <div class="space-y-6 group">
+            <div class="step-number w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold mb-8 transition-transform group-hover:scale-110">01</div>
+            <h4 class="text-xl font-bold uppercase tracking-widest">Consultation</h4>
+            <p class="text-[#929292] text-sm leading-relaxed">Digital scalp mapping and a lifestyle analysis to co-create your aesthetic vision.</p>
+          </div>
+          
+          <div class="space-y-6 group">
+            <div class="step-number w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold mb-8 transition-transform group-hover:scale-110">02</div>
+            <h4 class="text-xl font-bold uppercase tracking-widest">The Treatment</h4>
+            <p class="text-[#929292] text-sm leading-relaxed">Execution of your tailored botanical service using next-gen organic catalysts.</p>
+          </div>
+
+          <div class="space-y-6 group">
+            <div class="step-number w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold mb-8 transition-transform group-hover:scale-110">03</div>
+            <h4 class="text-xl font-bold uppercase tracking-widest">Aftercare</h4>
+            <p class="text-[#929292] text-sm leading-relaxed">Custom gloss sealants and a personalized take-home prescription for longevity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 px-12 lg:px-24 bg-white">
+       <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div class="max-w-xl">
+          <span class="text-[12px] font-bold uppercase tracking-[0.2em] text="#00AB8E">Voices of Veridia</span>
+          <h2 class="text-5xl font-bold mt-4 leading-tight">Refined by the <br/>Nature of Our Work.</h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-20">
+        <div class="p-12 bg-[#929292]/5 rounded-[40px] relative">
+           <iconify-icon icon="mdi:format-quote-open" class="text-6xl text-[#00AB8E]/20 absolute top-8 left-8"></iconify-icon>
+           <p class="text-2xl leading-relaxed text-[#0a0a0a] relative z-10">"The level of detail in their cutting process is insane. I felt like I was part of a design project, not just getting a trim."</p>
+           <div class="mt-8 flex items-center gap-4">
+              <img src="https://i.pravatar.cc/150?u=a4" alt="User" class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <span class="block font-bold">Julianna Moore</span>
+                <span class="text-xs text-[#929292] uppercase tracking-widest font-bold">Creative Director</span>
+              </div>
+           </div>
+        </div>
+        <div class="p-12 bg-[#929292]/5 rounded-[40px] relative">
+           <iconify-icon icon="mdi:format-quote-open" class="text-6xl text-[#F0B13D]/20 absolute top-8 left-8"></iconify-icon>
+           <p class="text-2xl leading-relaxed text-[#0a0a0a] relative z-10">"My hair health has completely pivoted. The botanical treatments are a game changer for anyone tired of chemical burn."</p>
+           <div class="mt-8 flex items-center gap-4">
+              <img src="https://i.pravatar.cc/150?u=a5" alt="User" class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <span class="block font-bold">David Chen</span>
+                <span class="text-xs text-[#929292] uppercase tracking-widest font-bold">Product Designer</span>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-32 px-12 lg:px-24 bg-white">
+      <div class="max-w-6xl mx-auto bg-[#00AB8E] rounded-[60px] p-20 text-center relative overflow-hidden">
+        <div class="relative z-10">
+          <h2 class="text-5xl font-bold text-white mb-8 tracking-tight">Start Your <br/><span class="editorial-serif italic text-white/90">Transformation</span> Today.</h2>
+          <a href="https://draft-0b68644e-1434-4395-937c-b38add6e8769.preview.superdesign.dev" id="footer-cta-book-final" class="inline-block px-12 py-5 bg-white text-[#00AB8E] rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+            Book Your Artistic Session
+          </a>
+        </div>
+        <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5"></div>
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/10"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+<div v-scope="{ ...{&quot;cutHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;colorHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;treatmentHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;stylingHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;aboutHref&quot;:&quot;./01-about-salon.html&quot;,&quot;philosophyHref&quot;:&quot;./01-about-salon.html&quot;,&quot;careersHref&quot;:&quot;./01-about-salon.html&quot;,&quot;contactHref&quot;:&quot;./02-contact-location.html&quot;,&quot;instagramHref&quot;:&quot;https://instagram.com&quot;,&quot;facebookHref&quot;:&quot;https://facebook.com&quot;,&quot;linkedinHref&quot;:&quot;https://linkedin.com&quot;}, $emit() {} }">
+<footer class="py-24 px-12 lg:px-24 border-t border-[#929292]/10 bg-white">
+  <div class="grid md:grid-cols-4 gap-12 mb-20">
+    <div class="col-span-1 md:col-span-1">
+      <div class="flex items-center gap-2 mb-8">
+        <div class="w-6 h-6 bg-[#00AB8E] rounded-sm rotate-45"></div>
+        <span class="text-xl font-bold tracking-tighter">VERIDIA.</span>
+      </div>
+      <p class="text-[#929292] text-sm leading-relaxed">
+        Crafting beauty through botanical intelligence. <br/>Part of the Global Eco-Salon Collective.
+      </p>
+    </div>
+    
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Services</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="cutHref" class="hover:text-[#00AB8E] transition-colors">Signature Cut</a></li>
+        <li><a :href="colorHref" class="hover:text-[#00AB8E] transition-colors">Botanical Color</a></li>
+        <li><a :href="treatmentHref" class="hover:text-[#00AB8E] transition-colors">Scalp Therapy</a></li>
+        <li><a :href="stylingHref" class="hover:text-[#00AB8E] transition-colors">Event Styling</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Studio</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="aboutHref" class="hover:text-[#00AB8E] transition-colors">Our Story</a></li>
+        <li><a :href="philosophyHref" class="hover:text-[#00AB8E] transition-colors">Sustainability</a></li>
+        <li><a :href="careersHref" class="hover:text-[#00AB8E] transition-colors">Careers</a></li>
+        <li><a :href="contactHref" class="hover:text-[#00AB8E] transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Newsletter</h6>
+      <p class="text-[#929292] text-sm">Get seasonal treatment tips and exclusive studio invites.</p>
+      <div class="relative">
+        <input type="email" placeholder="Email Address" class="w-full bg-[#929292]/5 border border-[#929292]/20 py-3 px-4 rounded-lg focus:outline-none focus:border-[#00AB8E] text-sm">
+        <button @click="$emit('subscribe')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00AB8E] font-bold text-sm hover:opacity-80 transition-opacity">Join</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#929292]/10 gap-6">
+    <span class="text-[#929292] text-xs font-medium uppercase tracking-[0.2em]">&copy; 2024 Veridia Hair Artistry. All Rights Reserved.</span>
+    <div class="flex gap-8">
+      <a :href="instagramHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:instagram" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="facebookHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:facebook" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="linkedinHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:linkedin" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- /component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,384 @@
+Page: Contact & Location
+
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Location | Veridia Salon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Inter:wght@400;500;700&display=swap');
+
+    :root {
+      --primary-green: #00AB8E;
+      --secondary-gold: #F0B13D;
+      --structural-grey: #929292;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FFFFFF;
+    }
+
+    .editorial-serif {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    .orange-glow {
+      box-shadow: 0 0 25px rgba(240, 177, 61, 0.3);
+    }
+
+    .green-shadow-hover:hover {
+      box-shadow: 0 20px 40px rgba(0, 171, 142, 0.1);
+    }
+
+    .geometric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      opacity: 0.05;
+    }
+
+    .cube-border-accent::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 32px;
+      height: 32px;
+      border-top: 2px solid var(--secondary-gold);
+      border-right: 2px solid var(--secondary-gold);
+      z-index: 10;
+    }
+
+    details[open] summary iconify-icon {
+      transform: rotate(180deg);
+    }
+  </style>
+  <style>sd-component { display: block; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.js" defer init></script>
+</head>
+<body>
+  <div class="min-h-screen flex flex-col relative">
+    <!-- Navigation -->
+    <!-- component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+<div v-scope="{ ...{&quot;activeItem&quot;:&quot;about&quot;,&quot;homeHref&quot;:&quot;#home&quot;,&quot;servicesHref&quot;:&quot;#services&quot;,&quot;stylistsHref&quot;:&quot;#stylists&quot;,&quot;galleryHref&quot;:&quot;#gallery&quot;,&quot;aboutHref&quot;:&quot;#about&quot;,&quot;bookHref&quot;:&quot;#book&quot;}, $emit() {} }">
+<nav class="fixed top-0 left-0 right-0 h-[80px] bg-white/95 backdrop-blur-[12px] border-b border-[#929292]/20 z-50 flex items-center justify-between px-12">
+  <a :href="homeHref" class="flex items-center gap-2 decoration-transparent">
+    <div class="w-8 h-8 bg-[#00AB8E] rounded-sm rotate-45 flex items-center justify-center">
+      <iconify-icon icon="lucide:leaf" class="text-white -rotate-45 text-sm"></iconify-icon>
+    </div>
+    <span class="text-xl font-bold tracking-tighter text-[#0a0a0a]">VERIDIA<span class="text-[#00AB8E]">.</span></span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-10">
+    <a :href="servicesHref" :class="activeItem === 'services' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Services</a>
+    <a :href="stylistsHref" :class="activeItem === 'stylists' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Stylists</a>
+    <a :href="galleryHref" :class="activeItem === 'gallery' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Gallery</a>
+    <a :href="aboutHref" :class="activeItem === 'about' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">About</a>
+  </div>
+
+  <a :href="bookHref" class="px-8 py-3 bg-[#00AB8E] text-white rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#00967d] transition-all">
+    Book Appointment
+  </a>
+</nav>
+</div>
+<!-- /component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+
+    <main class="flex-1 pt-32">
+      <!-- Hero Section -->
+      <section class="px-12 lg:px-24 mb-24">
+        <div class="max-w-4xl">
+          <nav class="mb-8">
+            <ol class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#929292]">
+              <li><a href="#" id="breadcrumb-home" class="hover:text-[#00AB8E] transition-colors">Home</a></li>
+              <li><iconify-icon icon="lucide:chevron-right" class="text-xs"></iconify-icon></li>
+              <li class="text-[#0a0a0a]">Contact</li>
+            </ol>
+          </nav>
+          <h1 class="text-7xl font-bold tracking-tighter text-[#0a0a0a] leading-[1.1] mb-6">
+            Get in <span class="editorial-serif">Touch</span>.
+          </h1>
+          <p class="text-[#929292] text-xl max-w-2xl leading-relaxed">
+            Whether you're seeking a transformation or botanical advice, our studio coordinators are ready to assist your journey.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Grid -->
+      <section class="px-12 lg:px-24 grid lg:grid-cols-2 gap-20 mb-32">
+        <!-- Left: Form -->
+        <div class="space-y-12">
+          <div class="bg-white border border-[#929292]/10 rounded-[40px] p-10 shadow-sm">
+            <h3 class="text-2xl font-bold mb-8">Send an Inquiry</h3>
+            <form class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-[10px] font-bold uppercase tracking-widest text-[#929292]">Full Name</label>
+                  <input type="text" placeholder="Jane Doe" class="w-full bg-[#929292]/5 border border-[#929292]/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-[#00AB8E] transition-colors">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-[10px] font-bold uppercase tracking-widest text-[#929292]">Email Address</label>
+                  <input type="email" placeholder="jane@example.com" class="w-full bg-[#929292]/5 border border-[#929292]/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-[#00AB8E] transition-colors">
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] font-bold uppercase tracking-widest text-[#929292]">Service Interest</label>
+                <select class="w-full bg-[#929292]/5 border border-[#929292]/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-[#00AB8E] transition-colors appearance-none">
+                  <option>Select a category</option>
+                  <option>Hair Cutting</option>
+                  <option>Botanical Coloring</option>
+                  <option>Scalp Therapy</option>
+                  <option>Event Styling</option>
+                </select>
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] font-bold uppercase tracking-widest text-[#929292]">Message</label>
+                <textarea rows="4" placeholder="How can we help you?" class="w-full bg-[#929292]/5 border border-[#929292]/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-[#00AB8E] transition-colors resize-none"></textarea>
+              </div>
+              <button type="submit" class="w-full py-5 bg-[#00AB8E] text-white rounded-2xl font-bold uppercase tracking-widest hover:opacity-90 transition-all orange-glow">
+                Submit Request
+              </button>
+            </form>
+          </div>
+
+          <!-- Sustainability Note -->
+          <div class="bg-[#0a0a0a] rounded-[40px] p-10 text-white relative overflow-hidden">
+            <div class="geometric-grid absolute inset-0"></div>
+            <div class="relative z-10 flex items-start gap-6">
+              <div class="w-12 h-12 rounded-2xl bg-[#00AB8E]/20 flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:leaf" class="text-2xl text-[#00AB8E]"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold mb-2">Carbon-Neutral Operations</h4>
+                <p class="text-[#929292] text-sm leading-relaxed">
+                  Our communication servers and physical studios run on 100% renewable energy. Every digital inquiry contributes to our clean-tech initiative.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Location Cards -->
+        <div class="space-y-8">
+          <div class="flex justify-between items-end mb-4">
+            <h3 class="text-2xl font-bold">Our Studios</h3>
+            <div class="flex gap-4">
+              <iconify-icon icon="mdi:instagram" class="text-2xl text-[#929292] hover:text-[#00AB8E] transition-colors cursor-pointer"></iconify-icon>
+              <iconify-icon icon="mdi:facebook" class="text-2xl text-[#929292] hover:text-[#00AB8E] transition-colors cursor-pointer"></iconify-icon>
+            </div>
+          </div>
+
+          <!-- Oslo Card -->
+          <div class="group bg-white border border-[#929292]/10 rounded-[40px] p-8 transition-all hover:-translate-y-2 green-shadow-hover relative">
+            <div class="absolute top-8 right-8 flex items-center gap-2 bg-[#00AB8E]/10 px-3 py-1 rounded-full">
+              <span class="w-2 h-2 rounded-full bg-[#00AB8E] animate-pulse"></span>
+              <span class="text-[10px] font-bold text-[#00AB8E] uppercase tracking-widest">Open Now</span>
+            </div>
+            <div class="flex items-start gap-6">
+              <div class="w-14 h-14 rounded-2xl bg-[#929292]/5 flex items-center justify-center">
+                <iconify-icon icon="lucide:map-pin" class="text-2xl text-[#00AB8E]"></iconify-icon>
+              </div>
+              <div class="space-y-6">
+                <div>
+                  <h4 class="text-xl font-bold">Oslo Flagship</h4>
+                  <p class="text-[#929292] text-sm mt-1">Henrik Ibsens gate 60C, 0255 Oslo, Norway</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                  <div>
+                    <span class="block text-[10px] font-bold text-[#929292] uppercase tracking-widest mb-1">Hours</span>
+                    <p class="text-sm font-medium">08:00 — 20:00</p>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] font-bold text-[#929292] uppercase tracking-widest mb-1">Contact</span>
+                    <p class="text-sm font-medium">+47 22 12 34 56</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- London Card -->
+          <div class="group bg-white border border-[#929292]/10 rounded-[40px] p-8 transition-all hover:-translate-y-2 green-shadow-hover relative">
+            <div class="absolute top-8 right-8 flex items-center gap-2 bg-[#00AB8E]/10 px-3 py-1 rounded-full">
+              <span class="w-2 h-2 rounded-full bg-[#00AB8E] animate-pulse"></span>
+              <span class="text-[10px] font-bold text-[#00AB8E] uppercase tracking-widest">Open Now</span>
+            </div>
+            <div class="flex items-start gap-6">
+              <div class="w-14 h-14 rounded-2xl bg-[#929292]/5 flex items-center justify-center">
+                <iconify-icon icon="lucide:map-pin" class="text-2xl text-[#00AB8E]"></iconify-icon>
+              </div>
+              <div class="space-y-6">
+                <div>
+                  <h4 class="text-xl font-bold">London Studio</h4>
+                  <p class="text-[#929292] text-sm mt-1">15 Floral St, London WC2E 9DH, UK</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                  <div>
+                    <span class="block text-[10px] font-bold text-[#929292] uppercase tracking-widest mb-1">Hours</span>
+                    <p class="text-sm font-medium">08:00 — 20:00</p>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] font-bold text-[#929292] uppercase tracking-widest mb-1">Contact</span>
+                    <p class="text-sm font-medium">+44 20 7123 4567</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Support Extensions -->
+          <div class="p-8 bg-[#929292]/5 rounded-[40px] space-y-6">
+            <h5 class="text-[10px] font-bold uppercase tracking-widest text-[#929292]">Direct Inquiries</h5>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-bold">Styling & Events</span>
+                <a href="mailto:events@veridia.hair" class="text-[#00AB8E] text-xs font-bold hover:underline">events@veridia.hair</a>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-bold">Botanical Consults</span>
+                <a href="mailto:science@veridia.hair" class="text-[#00AB8E] text-xs font-bold hover:underline">science@veridia.hair</a>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-bold">Careers</span>
+                <a href="mailto:artistry@veridia.hair" class="text-[#00AB8E] text-xs font-bold hover:underline">artistry@veridia.hair</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Studio Visuals / Maps Section -->
+      <section class="px-12 lg:px-24 mb-32">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="relative aspect-video bg-[#929292]/10 rounded-[60px] overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Oslo Interior">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute bottom-10 left-10 text-white">
+               <h4 class="text-2xl font-bold">Oslo Flagship</h4>
+               <button class="mt-4 px-6 py-2 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/40 transition-all">View Map</button>
+            </div>
+          </div>
+          <div class="relative aspect-video bg-[#929292]/10 rounded-[60px] overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="London Interior">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute bottom-10 left-10 text-white">
+               <h4 class="text-2xl font-bold">London Studio</h4>
+               <button class="mt-4 px-6 py-2 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/40 transition-all">View Map</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="px-12 lg:px-24 mb-32">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="editorial-serif italic text-3xl text-[#F0B13D]">Assistance</span>
+            <h2 class="text-5xl font-bold tracking-tight mt-4">Frequent Inquiries</h2>
+          </div>
+          <div class="space-y-4">
+            <details class="bg-white border border-[#929292]/10 rounded-[32px] p-6 group transition-all" open>
+              <summary class="flex justify-between items-center cursor-pointer list-none">
+                <span class="text-lg font-bold">How early should I arrive for my session?</span>
+                <iconify-icon icon="lucide:chevron-down" class="text-xl text-[#00AB8E] transition-transform duration-300"></iconify-icon>
+              </summary>
+              <div class="mt-6 text-[#929292] leading-relaxed text-sm">
+                We recommend arriving 10-15 minutes prior to your scheduled time to enjoy our signature botanical tea and complete your digital hair analysis profile.
+              </div>
+            </details>
+            <details class="bg-white border border-[#929292]/10 rounded-[32px] p-6 group transition-all">
+              <summary class="flex justify-between items-center cursor-pointer list-none">
+                <span class="text-lg font-bold">Do you accept walk-in appointments?</span>
+                <iconify-icon icon="lucide:chevron-down" class="text-xl text-[#00AB8E] transition-transform duration-300"></iconify-icon>
+              </summary>
+              <div class="mt-6 text-[#929292] leading-relaxed text-sm">
+                While we primarily operate by appointment to ensure architectural precision, we occasionally have last-minute openings. Please call the studio directly for real-time availability.
+              </div>
+            </details>
+            <details class="bg-white border border-[#929292]/10 rounded-[32px] p-6 group transition-all">
+              <summary class="flex justify-between items-center cursor-pointer list-none">
+                <span class="text-lg font-bold">Is parking available at the London studio?</span>
+                <iconify-icon icon="lucide:chevron-down" class="text-xl text-[#00AB8E] transition-transform duration-300"></iconify-icon>
+              </summary>
+              <div class="mt-6 text-[#929292] leading-relaxed text-sm">
+                There is limited street parking on Floral Street, though we highly recommend using the Covent Garden underground station which is a 3-minute walk away to reduce carbon footprint.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+<div v-scope="{ ...{&quot;cutHref&quot;:&quot;#signature-cut&quot;,&quot;colorHref&quot;:&quot;#botanical-color&quot;,&quot;treatmentHref&quot;:&quot;#scalp-therapy&quot;,&quot;stylingHref&quot;:&quot;#event-styling&quot;,&quot;aboutHref&quot;:&quot;#our-story&quot;,&quot;philosophyHref&quot;:&quot;#sustainability&quot;,&quot;careersHref&quot;:&quot;#careers&quot;,&quot;contactHref&quot;:&quot;#contact&quot;,&quot;instagramHref&quot;:&quot;https://instagram.com&quot;,&quot;facebookHref&quot;:&quot;https://facebook.com&quot;,&quot;linkedinHref&quot;:&quot;https://linkedin.com&quot;}, $emit() {} }">
+<footer class="py-24 px-12 lg:px-24 border-t border-[#929292]/10 bg-white">
+  <div class="grid md:grid-cols-4 gap-12 mb-20">
+    <div class="col-span-1 md:col-span-1">
+      <div class="flex items-center gap-2 mb-8">
+        <div class="w-6 h-6 bg-[#00AB8E] rounded-sm rotate-45"></div>
+        <span class="text-xl font-bold tracking-tighter">VERIDIA.</span>
+      </div>
+      <p class="text-[#929292] text-sm leading-relaxed">
+        Crafting beauty through botanical intelligence. <br/>Part of the Global Eco-Salon Collective.
+      </p>
+    </div>
+    
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Services</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="cutHref" class="hover:text-[#00AB8E] transition-colors">Signature Cut</a></li>
+        <li><a :href="colorHref" class="hover:text-[#00AB8E] transition-colors">Botanical Color</a></li>
+        <li><a :href="treatmentHref" class="hover:text-[#00AB8E] transition-colors">Scalp Therapy</a></li>
+        <li><a :href="stylingHref" class="hover:text-[#00AB8E] transition-colors">Event Styling</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Studio</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="aboutHref" class="hover:text-[#00AB8E] transition-colors">Our Story</a></li>
+        <li><a :href="philosophyHref" class="hover:text-[#00AB8E] transition-colors">Sustainability</a></li>
+        <li><a :href="careersHref" class="hover:text-[#00AB8E] transition-colors">Careers</a></li>
+        <li><a :href="contactHref" class="hover:text-[#00AB8E] transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Newsletter</h6>
+      <p class="text-[#929292] text-sm">Get seasonal treatment tips and exclusive studio invites.</p>
+      <div class="relative">
+        <input type="email" placeholder="Email Address" class="w-full bg-[#929292]/5 border border-[#929292]/20 py-3 px-4 rounded-lg focus:outline-none focus:border-[#00AB8E] text-sm">
+        <button @click="$emit('subscribe')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00AB8E] font-bold text-sm hover:opacity-80 transition-opacity">Join</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#929292]/10 gap-6">
+    <span class="text-[#929292] text-xs font-medium uppercase tracking-[0.2em]">&copy; 2024 Veridia Hair Artistry. All Rights Reserved.</span>
+    <div class="flex gap-8">
+      <a :href="instagramHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:instagram" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="facebookHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:facebook" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="linkedinHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:linkedin" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- /component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+  </div>
+</body>
+</html>
+```
+
+Please reference this design and implement it into our codebase; Try to understand the structure, which part of our codebase is relevant and implement

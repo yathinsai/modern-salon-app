@@ -1,0 +1,29 @@
+{
+  "name": "veridia-salon-app",
+  "version": "1.0.0",
+  "description": "Eco-Premium Hair Salon Booking Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"node server.js\" \"json-server --watch db.json --port 3000\"",
+    "dev": "concurrently \"nodemon server.js\" \"json-server --watch db.json --port 3000\"",
+    "server": "node server.js",
+    "api": "json-server --watch db.json --port 3000"
+  },
+  "keywords": [
+    "salon",
+    "booking",
+    "hair",
+    "eco-premium"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "open": "^9.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "json-server": "^0.17.4",
+    "nodemon": "^3.0.1"
+  }
+}

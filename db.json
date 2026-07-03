@@ -1,0 +1,36 @@
+{
+  "appointments": [
+    {
+      "id": 1,
+      "name": "Emma Anderson",
+      "service": "Botanical Color Treatment",
+      "stylist": "Sofia Martinez",
+      "date": "2024-09-04",
+      "time": "14:00"
+    },
+    {
+      "name": "Sarah Johnson",
+      "service": "Luminous Color Treatment",
+      "stylist": "Sofia Martinez",
+      "date": "2024-09-04",
+      "time": "14:30",
+      "id": 2
+    },
+    {
+      "name": "yathinsa",
+      "service": "haircut",
+      "stylist": "crew",
+      "date": "2026-07-02",
+      "time": "18:39",
+      "id": 3
+    },
+    {
+      "name": "raja",
+      "service": "haircut",
+      "stylist": "andrew",
+      "date": "2026-07-02",
+      "time": "19:03",
+      "id": 4
+    }
+  ]
+}

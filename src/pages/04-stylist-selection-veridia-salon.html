@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stylist Selection | Veridia Salon</title><script src="https://cdn.tailwindcss.com"></script><script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script><style>@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;700&display=swap'); :root { --primary-green: #00AB8E; --secondary-gold: #F0B13D; --structural-grey: #929292; } body { font-family: 'Inter', 'Helvetica Neue', sans-serif; overflow-x: hidden; } .editorial-serif { font-family: 'Playfair Display', serif; font-style: italic; } .stylist-card { transition: all 0.3s ease; } .stylist-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 171, 142, 0.1); } .stylist-card.selected { border-color: var(--primary-green); ring: 2px solid var(--primary-green); } .orange-glow { box-shadow: 0 0 25px rgba(240, 177, 61, 0.3); } .progress-line { height: 2px; background: #929292/20; flex-grow: 1; margin: 0 1rem; } .progress-line.active { background: var(--primary-green); }</style>  <style>sd-component { display: block; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.js" defer init></script>
+</head><body><div class="min-h-screen bg-white"><!-- component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+<div v-scope="{ ...{&quot;activeItem&quot;:&quot;stylists&quot;,&quot;homeHref&quot;:&quot;../&quot;,&quot;servicesHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;stylistsHref&quot;:&quot;./04-stylist-selection-veridia-salon.html&quot;,&quot;galleryHref&quot;:&quot;./03-gallery-salon.html&quot;,&quot;aboutHref&quot;:&quot;./01-about-salon.html&quot;,&quot;reviewsHref&quot;:&quot;./04-reviews.html&quot;,&quot;contactHref&quot;:&quot;./02-contact-location.html&quot;,&quot;bookHref&quot;:&quot;./03-eco-premium-booking-interface.html&quot;}, $emit() {} }">
+<nav class="fixed top-0 left-0 right-0 h-[80px] bg-white/95 backdrop-blur-[12px] border-b border-[#929292]/20 z-50 flex items-center justify-between px-12">
+  <a :href="homeHref" class="flex items-center gap-2 decoration-transparent">
+    <div class="w-8 h-8 bg-[#00AB8E] rounded-sm rotate-45 flex items-center justify-center">
+      <iconify-icon icon="lucide:leaf" class="text-white -rotate-45 text-sm"></iconify-icon>
+    </div>
+    <span class="text-xl font-bold tracking-tighter text-[#0a0a0a]">VERIDIA<span class="text-[#00AB8E]">.</span></span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-10">
+    <a :href="servicesHref" :class="activeItem === 'services' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Services</a>
+    <a :href="stylistsHref" :class="activeItem === 'stylists' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Stylists</a>
+    <a :href="galleryHref" :class="activeItem === 'gallery' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Gallery</a>
+    <a :href="aboutHref" :class="activeItem === 'about' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">About</a>
+    <a :href="reviewsHref" :class="activeItem === 'reviews' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Reviews</a>
+    <a :href="contactHref" :class="activeItem === 'contact' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Contact Us</a>
+  </div>
+
+  <a :href="bookHref" class="px-8 py-3 bg-[#00AB8E] text-white rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#00967d] transition-all">
+    Book Appointment
+  </a>
+</nav>
+</div>
+<!-- /component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) --><main class="pt-32 pb-24 px-12 lg:px-24"><div class="max-w-4xl mx-auto mb-16 text-center"><div class="flex items-center justify-center gap-4 mb-8"><div class="flex flex-col items-center gap-2"><div class="w-8 h-8 rounded-full border-2 border-[#00AB8E] flex items-center justify-center text-[#00AB8E] text-xs font-bold">01</div><span class="text-[10px] uppercase tracking-widest font-bold text-[#929292]">Service</span></div><div class="w-24 h-[2px] bg-[#00AB8E] mt-4"></div><div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-[#00AB8E] flex items-center justify-center text-white text-xs font-bold ring-4 ring-[#00AB8E]/10">02</div><span class="text-[10px] uppercase tracking-widest font-bold text-[#00AB8E]">Stylist</span></div><div class="w-24 h-[2px] bg-[#929292]/20 mt-4"></div><div class="flex flex-col items-center gap-2"><div class="w-8 h-8 rounded-full border-2 border-[#929292]/20 flex items-center justify-center text-[#929292] text-xs font-bold">03</div><span class="text-[10px] uppercase tracking-widest font-bold text-[#929292]">Time</span></div></div><h1 class="text-6xl font-bold text-[#0a0a0a] tracking-tight">Choose Your <br/><span class="editorial-serif italic text-[#F0B13D]">Artisan Partner</span></h1><p class="mt-6 text-[#929292] text-lg max-w-2xl mx-auto">Every Veridia stylist is trained in our botanical methodology. Select the expert who aligns best with your hair goals.</p></div><div class="flex flex-wrap items-center justify-center gap-4 mb-12"><button class="px-6 py-2 bg-[#00AB8E] text-white rounded-full text-[12px] font-bold uppercase tracking-widest">All Experts</button><button class="px-6 py-2 border border-[#929292]/20 text-[#0a0a0a] rounded-full text-[12px] font-bold uppercase tracking-widest hover:border-[#00AB8E] transition-colors">Botanical Color</button><button class="px-6 py-2 border border-[#929292]/20 text-[#0a0a0a] rounded-full text-[12px] font-bold uppercase tracking-widest hover:border-[#00AB8E] transition-colors">Precision Cuts</button><button class="px-6 py-2 border border-[#929292]/20 text-[#0a0a0a] rounded-full text-[12px] font-bold uppercase tracking-widest hover:border-[#00AB8E] transition-colors">Scalp Therapy</button></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"><div class="stylist-card bg-white border border-[#929292]/10 rounded-[40px] p-6 group cursor-pointer"><div class="relative aspect-[4/5] rounded-[32px] overflow-hidden mb-6 bg-[#929292]/5"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop" alt="Elena Vance" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md w-10 h-10 rounded-full flex items-center justify-center text-[#00AB8E] opacity-0 group-hover:opacity-100 transition-opacity"><iconify-icon icon="lucide:check-circle-2" class="text-2xl"></iconify-icon></div></div><div class="flex justify-between items-start mb-4"><div><h3 class="text-2xl font-bold text-[#0a0a0a]">Elena Vance</h3><p class="text-[10px] font-bold uppercase tracking-widest text-[#00AB8E] mt-1">Creative Director & Master Stylist</p></div><div class="flex items-center gap-1 text-[#F0B13D]"><iconify-icon icon="lucide:star" class="text-sm"></iconify-icon><span class="text-xs font-bold text-[#0a0a0a]">5.0</span><span class="text-[10px] text-[#929292]">(128)</span></div></div><p class="text-[#929292] text-sm leading-relaxed mb-6">Elena specializes in architectural precision cuts and advanced hair mapping technology to reveal natural flow.</p><div class="flex flex-wrap gap-2 mb-8"><span class="text-[10px] bg-[#929292]/5 px-3 py-1 rounded-full text-[#929292] font-bold uppercase">Precision Cuts</span><span class="text-[10px] bg-[#929292]/5 px-3 py-1 rounded-full text-[#929292] font-bold uppercase">Molecular Care</span></div><a href="https://draft-0b68644e-1434-4395-937c-b38add6e8769.preview.superdesign.dev" class="block w-full py-4 border-2 border-[#00AB8E] text-[#00AB8E] group-hover:bg-[#00AB8E] group-hover:text-white rounded-2xl text-[12px] font-bold uppercase tracking-widest text-center transition-all">Select Stylist</a></div><div class="stylist-card bg-white border-2 border-[#F0B13D] ring-8 ring-[#F0B13D]/5 rounded-[40px] p-6 cursor-pointer"><div class="relative aspect-[4/5] rounded-[32px] overflow-hidden mb-6 bg-[#929292]/5"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop" alt="Marcus Thorne" class="w-full h-full object-cover"><div class="absolute top-4 right-4 bg-[#F0B13D] w-10 h-10 rounded-full flex items-center justify-center text-white"><iconify-icon icon="lucide:star" class="text-2xl"></iconify-icon></div></div><div class="flex justify-between items-start mb-4"><div><h3 class="text-2xl font-bold text-[#0a0a0a]">Marcus Thorne</h3><p class="text-[10px] font-bold uppercase tracking-widest text-[#F0B13D] mt-1">Senior Botanical Specialist</p></div><div class="flex items-center gap-1 text-[#F0B13D]"><iconify-icon icon="lucide:star" class="text-sm"></iconify-icon><span class="text-xs font-bold text-[#0a0a0a]">4.9</span><span class="text-[10px] text-[#929292]">(312)</span></div></div><p class="text-[#929292] text-sm leading-relaxed mb-6">A pioneer in botanical color synthesis, Marcus bridges luxury aesthetics with holistic scalp wellness.</p><div class="flex flex-wrap gap-2 mb-8"><span class="text-[10px] bg-[#F0B13D]/10 px-3 py-1 rounded-full text-[#F0B13D] font-bold uppercase">Botanical Color</span><span class="text-[10px] bg-[#F0B13D]/10 px-3 py-1 rounded-full text-[#F0B13D] font-bold uppercase">Scalp Therapy</span></div><a href="https://draft-0b68644e-1434-4395-937c-b38add6e8769.preview.superdesign.dev" class="block w-full py-4 bg-[#F0B13D] text-white rounded-2xl text-[12px] font-bold uppercase tracking-widest text-center orange-glow transition-all">Select Stylist</a></div><div class="stylist-card bg-white border border-[#929292]/10 rounded-[40px] p-6 group cursor-pointer"><div class="relative aspect-[4/5] rounded-[32px] overflow-hidden mb-6 bg-[#929292]/5"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" alt="Sarah Jenkins" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md w-10 h-10 rounded-full flex items-center justify-center text-[#00AB8E] opacity-0 group-hover:opacity-100 transition-opacity"><iconify-icon icon="lucide:check-circle-2" class="text-2xl"></iconify-icon></div></div><div class="flex justify-between items-start mb-4"><div><h3 class="text-2xl font-bold text-[#0a0a0a]">Sarah Jenkins</h3><p class="text-[10px] font-bold uppercase tracking-widest text-[#00AB8E] mt-1">Senior Colorist</p></div><div class="flex items-center gap-1 text-[#F0B13D]"><iconify-icon icon="lucide:star" class="text-sm"></iconify-icon><span class="text-xs font-bold text-[#0a0a0a]">4.8</span><span class="text-[10px] text-[#929292]">(94)</span></div></div><p class="text-[#929292] text-sm leading-relaxed mb-6">Sarah creates multi-dimensional color palettes using 100% ammonia-free botanical pigments.</p><div class="flex flex-wrap gap-2 mb-8"><span class="text-[10px] bg-[#929292]/5 px-3 py-1 rounded-full text-[#929292] font-bold uppercase">Color Master</span><span class="text-[10px] bg-[#929292]/5 px-3 py-1 rounded-full text-[#929292] font-bold uppercase">Styling</span></div><a href="https://draft-0b68644e-1434-4395-937c-b38add6e8769.preview.superdesign.dev" class="block w-full py-4 border-2 border-[#00AB8E] text-[#00AB8E] group-hover:bg-[#00AB8E] group-hover:text-white rounded-2xl text-[12px] font-bold uppercase tracking-widest text-center transition-all">Select Stylist</a></div></div><div class="bg-[#929292]/5 rounded-[40px] p-12 text-center"><h4 class="text-2xl font-bold text-[#0a0a0a] mb-4">Unsure who to choose?</h4><p class="text-[#929292] mb-8">Our receptionists can match you with the perfect artist based on your specific hair profile.</p><a href="#" class="px-10 py-4 border border-[#0a0a0a] text-[#0a0a0a] rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#0a0a0a] hover:text-white transition-all">Contact Studio Support</a></div></main><!-- component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+<div v-scope="{ ...{&quot;cutHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;colorHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;treatmentHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;stylingHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;aboutHref&quot;:&quot;./01-about-salon.html&quot;,&quot;philosophyHref&quot;:&quot;./01-about-salon.html&quot;,&quot;careersHref&quot;:&quot;./01-about-salon.html&quot;,&quot;contactHref&quot;:&quot;./02-contact-location.html&quot;,&quot;instagramHref&quot;:&quot;https://instagram.com&quot;,&quot;facebookHref&quot;:&quot;https://facebook.com&quot;,&quot;linkedinHref&quot;:&quot;https://linkedin.com&quot;}, $emit() {} }">
+<footer class="py-24 px-12 lg:px-24 border-t border-[#929292]/10 bg-white">
+  <div class="grid md:grid-cols-4 gap-12 mb-20">
+    <div class="col-span-1 md:col-span-1">
+      <div class="flex items-center gap-2 mb-8">
+        <div class="w-6 h-6 bg-[#00AB8E] rounded-sm rotate-45"></div>
+        <span class="text-xl font-bold tracking-tighter">VERIDIA.</span>
+      </div>
+      <p class="text-[#929292] text-sm leading-relaxed">
+        Crafting beauty through botanical intelligence. <br/>Part of the Global Eco-Salon Collective.
+      </p>
+    </div>
+    
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Services</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="cutHref" class="hover:text-[#00AB8E] transition-colors">Signature Cut</a></li>
+        <li><a :href="colorHref" class="hover:text-[#00AB8E] transition-colors">Botanical Color</a></li>
+        <li><a :href="treatmentHref" class="hover:text-[#00AB8E] transition-colors">Scalp Therapy</a></li>
+        <li><a :href="stylingHref" class="hover:text-[#00AB8E] transition-colors">Event Styling</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Studio</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="aboutHref" class="hover:text-[#00AB8E] transition-colors">Our Story</a></li>
+        <li><a :href="philosophyHref" class="hover:text-[#00AB8E] transition-colors">Sustainability</a></li>
+        <li><a :href="careersHref" class="hover:text-[#00AB8E] transition-colors">Careers</a></li>
+        <li><a :href="contactHref" class="hover:text-[#00AB8E] transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Newsletter</h6>
+      <p class="text-[#929292] text-sm">Get seasonal treatment tips and exclusive studio invites.</p>
+      <div class="relative">
+        <input type="email" placeholder="Email Address" class="w-full bg-[#929292]/5 border border-[#929292]/20 py-3 px-4 rounded-lg focus:outline-none focus:border-[#00AB8E] text-sm">
+        <button @click="$emit('subscribe')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00AB8E] font-bold text-sm hover:opacity-80 transition-opacity">Join</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#929292]/10 gap-6">
+    <span class="text-[#929292] text-xs font-medium uppercase tracking-[0.2em]">&copy; 2024 Veridia Hair Artistry. All Rights Reserved.</span>
+    <div class="flex gap-8">
+      <a :href="instagramHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:instagram" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="facebookHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:facebook" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="linkedinHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:linkedin" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- /component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) --></div></body></html>

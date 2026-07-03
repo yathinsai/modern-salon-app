@@ -1,0 +1,409 @@
+Page: About Our Eco-Premium Sanctuary
+
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Veridia Salon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Inter:wght@400;500;700&display=swap');
+
+    :root {
+      --primary-green: #00AB8E;
+      --secondary-gold: #F0B13D;
+      --structural-grey: #929292;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .editorial-serif {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    .orange-glow {
+      box-shadow: 0 0 25px rgba(240, 177, 61, 0.3);
+    }
+
+    .card-lift {
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .card-lift:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 60px rgba(0, 171, 142, 0.15);
+    }
+
+    .bridge-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-green), var(--secondary-gold));
+      opacity: 0.3;
+      width: 100%;
+    }
+
+    .cube-accent {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 40px;
+      height: 40px;
+      border-top: 3px solid var(--secondary-gold);
+      border-right: 3px solid var(--secondary-gold);
+      z-index: 10;
+    }
+
+    .geometric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      opacity: 0.05;
+    }
+  </style>
+  <style>sd-component { display: block; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.js" defer init></script>
+</head>
+<body>
+  <div class="min-h-screen bg-white">
+    <!-- NavigationBar Component Integration -->
+    <!-- component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+<div v-scope="{ ...{&quot;activeItem&quot;:&quot;about&quot;,&quot;homeHref&quot;:&quot;#home&quot;,&quot;servicesHref&quot;:&quot;#services&quot;,&quot;stylistsHref&quot;:&quot;#stylists&quot;,&quot;galleryHref&quot;:&quot;#gallery&quot;,&quot;aboutHref&quot;:&quot;#about&quot;,&quot;bookHref&quot;:&quot;#book&quot;}, $emit() {} }">
+<nav class="fixed top-0 left-0 right-0 h-[80px] bg-white/95 backdrop-blur-[12px] border-b border-[#929292]/20 z-50 flex items-center justify-between px-12">
+  <a :href="homeHref" class="flex items-center gap-2 decoration-transparent">
+    <div class="w-8 h-8 bg-[#00AB8E] rounded-sm rotate-45 flex items-center justify-center">
+      <iconify-icon icon="lucide:leaf" class="text-white -rotate-45 text-sm"></iconify-icon>
+    </div>
+    <span class="text-xl font-bold tracking-tighter text-[#0a0a0a]">VERIDIA<span class="text-[#00AB8E]">.</span></span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-10">
+    <a :href="servicesHref" :class="activeItem === 'services' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Services</a>
+    <a :href="stylistsHref" :class="activeItem === 'stylists' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Stylists</a>
+    <a :href="galleryHref" :class="activeItem === 'gallery' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Gallery</a>
+    <a :href="aboutHref" :class="activeItem === 'about' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">About</a>
+  </div>
+
+  <a :href="bookHref" class="px-8 py-3 bg-[#00AB8E] text-white rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#00967d] transition-all">
+    Book Appointment
+  </a>
+</nav>
+</div>
+<!-- /component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+
+    <!-- Hero Section -->
+    <section class="pt-48 pb-24 px-12 lg:px-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-[55%_45%] gap-20 items-center">
+          <div class="space-y-10">
+            <div class="inline-flex items-center gap-3 bg-[#00AB8E]/10 px-4 py-2 rounded-full">
+              <iconify-icon icon="lucide:sparkles" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#00AB8E]">The Veridia Ethos</span>
+            </div>
+            <h1 class="text-8xl font-bold tracking-tighter leading-[0.9]">
+              Our <span class="editorial-serif">Story</span>.<br/>
+              Precision Artistry.
+            </h1>
+            <div class="space-y-6">
+              <p class="text-2xl text-[#0a0a0a] font-medium leading-relaxed">
+                Bridging the gap between <span class="text-[#00AB8E]">botanical intelligence</span> and architectural hair design.
+              </p>
+              <p class="text-[#929292] text-lg leading-relaxed max-w-xl">
+                Veridia was founded on the belief that luxury shouldn't compromise biology. We've spent a decade refining a methodology that respects both the planet and your personal aesthetic.
+              </p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="relative rounded-[40px] overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2070&auto=format&fit=crop" alt="Salon Atmosphere" class="w-full aspect-[4/5] object-cover">
+              <div class="cube-accent"></div>
+            </div>
+            <!-- Floating Stats Card -->
+            <div class="absolute -bottom-10 -left-10 bg-[#F0B13D] p-8 rounded-3xl shadow-xl min-w-[240px] orange-glow">
+              <div class="space-y-4">
+                <div>
+                  <span class="block text-4xl font-bold text-white">Est. 2014</span>
+                  <span class="block text-[10px] uppercase font-bold tracking-widest text-white/80 mt-1">A decade of excellence</span>
+                </div>
+                <div class="pt-4 border-t border-white/20">
+                  <div class="flex items-center gap-3">
+                    <div class="flex -space-x-3">
+                      <img src="https://i.pravatar.cc/100?u=1" class="w-8 h-8 rounded-full border-2 border-[#F0B13D]">
+                      <img src="https://i.pravatar.cc/100?u=2" class="w-8 h-8 rounded-full border-2 border-[#F0B13D]">
+                      <img src="https://i.pravatar.cc/100?u=3" class="w-8 h-8 rounded-full border-2 border-[#F0B13D]">
+                    </div>
+                    <span class="text-sm font-bold text-white">42+ Artisans</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Bridge Conceptual Section -->
+    <section class="py-32 bg-[#929292]/5 px-12 lg:px-24">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 items-center gap-12">
+          <!-- Left: Scientific Precision -->
+          <div class="bg-white p-12 rounded-[48px] shadow-sm card-lift">
+            <div class="w-14 h-14 rounded-2xl bg-[#00AB8E]/10 flex items-center justify-center text-[#00AB8E] mb-8">
+              <iconify-icon icon="lucide:microscope" class="text-3xl"></iconify-icon>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Scientific Precision</h3>
+            <p class="text-[#929292] leading-relaxed">Molecular hair analysis and scalp-mapping technology drive every individual treatment plan.</p>
+          </div>
+
+          <!-- Center Bridge -->
+          <div class="flex flex-col items-center">
+            <div class="bridge-line mb-8"></div>
+            <div class="px-10 py-4 bg-[#F0B13D] text-white rounded-full text-[10px] font-bold uppercase tracking-[0.3em] whitespace-nowrap shadow-lg shadow-[#F0B13D]/20">
+              The Bridge
+            </div>
+            <div class="bridge-line mt-8"></div>
+          </div>
+
+          <!-- Right: Organic Soul -->
+          <div class="bg-white p-12 rounded-[48px] shadow-sm card-lift">
+            <div class="w-14 h-14 rounded-2xl bg-[#F0B13D]/10 flex items-center justify-center text-[#F0B13D] mb-8">
+              <iconify-icon icon="lucide:leaf" class="text-3xl"></iconify-icon>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Organic Soul</h3>
+            <p class="text-[#929292] leading-relaxed">Sustainably sourced botanicals and bio-adaptive extracts restore hair to its primal health.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-32 px-12 lg:px-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-24">
+          <span class="text-[12px] font-bold uppercase tracking-[0.2em] text-[#929292]">Our Pillars</span>
+          <h2 class="text-5xl font-bold mt-4 tracking-tight">Built on Conscience.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-12">
+          <div class="space-y-6">
+            <iconify-icon icon="lucide:sparkles" class="text-4xl text-[#00AB8E]"></iconify-icon>
+            <h4 class="text-xl font-bold">Craftsmanship</h4>
+            <p class="text-sm text-[#929292] leading-relaxed">Architectural precision in every cut, tailored to the unique geometry of your facial structure.</p>
+          </div>
+          <div class="space-y-6">
+            <iconify-icon icon="lucide:recycle" class="text-4xl text-[#F0B13D]"></iconify-icon>
+            <h4 class="text-xl font-bold">Sustainability</h4>
+            <p class="text-sm text-[#929292] leading-relaxed">Every product and practice is vetted for environmental neutrality and zero-waste impact.</p>
+          </div>
+          <div class="space-y-6">
+            <iconify-icon icon="lucide:zap" class="text-4xl text-[#00AB8E]"></iconify-icon>
+            <h4 class="text-xl font-bold">Innovation</h4>
+            <p class="text-sm text-[#929292] leading-relaxed">Constantly evolving our chemical-free formulas through advanced laboratory partnerships.</p>
+          </div>
+          <div class="space-y-6">
+            <iconify-icon icon="lucide:users" class="text-4xl text-[#F0B13D]"></iconify-icon>
+            <h4 class="text-xl font-bold">Community</h4>
+            <p class="text-sm text-[#929292] leading-relaxed">Creating a sanctuary for connection, education, and shared botanical appreciation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sustainability Impact Section -->
+    <section class="py-32 bg-[#0a0a0a] text-white relative overflow-hidden px-12 lg:px-24">
+      <div class="geometric-grid absolute inset-0">
+        <div class="border border-white/10"></div><div class="border border-white/10"></div><div class="border border-white/10"></div><div class="border border-white/10"></div>
+        <div class="border border-white/10"></div><div class="border border-white/10"></div><div class="border border-white/10"></div><div class="border border-white/10"></div>
+      </div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <div class="space-y-8">
+            <span class="editorial-serif italic text-3xl text-[#F0B13D]">Conscious Impact</span>
+            <h2 class="text-5xl font-bold leading-tight">Restoring Beauty, <br/>Preserving Nature.</h2>
+            <p class="text-[#929292] text-lg leading-relaxed">Our studios are more than spaces; they are living laboratories of sustainability. Every visit contributes to our reforestation and ocean cleanup partnerships.</p>
+            
+            <div class="grid grid-cols-2 gap-8 pt-8">
+              <div class="flex items-center gap-4">
+                <iconify-icon icon="lucide:droplet" class="text-4xl text-[#00AB8E]"></iconify-icon>
+                <div>
+                  <span class="block text-2xl font-bold tracking-tight">95%</span>
+                  <span class="block text-[10px] uppercase font-bold tracking-widest text-[#929292]">Water Recovered</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <iconify-icon icon="lucide:cloud" class="text-4xl text-[#F0B13D]"></iconify-icon>
+                <div>
+                  <span class="block text-2xl font-bold tracking-tight">0%</span>
+                  <span class="block text-[10px] uppercase font-bold tracking-widest text-[#929292]">Net Carbon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="aspect-square bg-white/5 rounded-3xl p-10 flex flex-col items-center justify-center text-center space-y-4 card-lift">
+              <iconify-icon icon="lucide:award" class="text-4xl text-[#00AB8E]"></iconify-icon>
+              <span class="text-[10px] font-bold uppercase tracking-widest">Certified Organic</span>
+            </div>
+            <div class="aspect-square bg-white/5 rounded-3xl p-10 flex flex-col items-center justify-center text-center space-y-4 card-lift">
+              <iconify-icon icon="lucide:wind" class="text-4xl text-[#F0B13D]"></iconify-icon>
+              <span class="text-[10px] font-bold uppercase tracking-widest">Renewable Energy</span>
+            </div>
+            <div class="aspect-square bg-white/5 rounded-3xl p-10 flex flex-col items-center justify-center text-center space-y-4 card-lift">
+              <iconify-icon icon="lucide:globe" class="text-4xl text-[#00AB8E]"></iconify-icon>
+              <span class="text-[10px] font-bold uppercase tracking-widest">B-Corp Verified</span>
+            </div>
+            <div class="aspect-square bg-white/5 rounded-3xl p-10 flex flex-col items-center justify-center text-center space-y-4 card-lift">
+              <iconify-icon icon="lucide:leaf" class="text-4xl text-[#F0B13D]"></iconify-icon>
+              <span class="text-[10px] font-bold uppercase tracking-widest">Eco-Alliance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Highlights -->
+    <section class="py-32 px-12 lg:px-24 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div>
+            <span class="text-[12px] font-bold uppercase tracking-[0.2em] text-[#00AB8E]">Our Studios</span>
+            <h2 class="text-5xl font-bold mt-4 tracking-tight leading-tight">A Global <br/>Presence.</h2>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="group cursor-pointer">
+            <div class="relative rounded-[40px] overflow-hidden mb-8 aspect-video">
+              <img src="https://images.unsplash.com/photo-1512690196236-45a1f6125027?q=80&w=2070&auto=format&fit=crop" alt="Oslo Flagship" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <div class="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-[#00AB8E]"></div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-[#0a0a0a]">Flagship Sanctuary</span>
+              </div>
+            </div>
+            <h3 class="text-3xl font-bold group-hover:text-[#00AB8E] transition-colors">Oslo Flagship</h3>
+            <p class="text-[#929292] mt-2">Henrik Ibsens gate 60C, 0255 Oslo, Norway</p>
+          </div>
+          <div class="group cursor-pointer">
+            <div class="relative rounded-[40px] overflow-hidden mb-8 aspect-video">
+              <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2070&auto=format&fit=crop" alt="London Studio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <div class="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-[#F0B13D]"></div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-[#0a0a0a]">Opening Soon</span>
+              </div>
+            </div>
+            <h3 class="text-3xl font-bold group-hover:text-[#F0B13D] transition-colors">London Studio</h3>
+            <p class="text-[#929292] mt-2">Marylebone High St, London W1U, United Kingdom</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Carousel Placeholder -->
+    <section class="py-32 bg-[#929292]/5 px-12 lg:px-24 overflow-hidden">
+      <div class="max-w-4xl mx-auto text-center space-y-12">
+        <iconify-icon icon="mdi:format-quote-open" class="text-7xl text-[#00AB8E]/20"></iconify-icon>
+        <div class="space-y-8">
+          <p class="text-4xl leading-tight text-[#0a0a0a] editorial-serif font-bold">
+            "Veridia bridges luxury with actual conscience. Every visit feels like a contribution to myself and the planet."
+          </p>
+          <div class="flex flex-col items-center">
+            <span class="block font-bold text-lg">Julianna Moore</span>
+            <span class="text-xs text-[#929292] uppercase tracking-widest font-bold mt-1">Fine Arts Curator</span>
+          </div>
+        </div>
+        <div class="flex justify-center gap-3">
+          <div class="w-12 h-1 bg-[#00AB8E]"></div>
+          <div class="w-12 h-1 bg-[#929292]/20"></div>
+          <div class="w-12 h-1 bg-[#929292]/20"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-32 px-12 lg:px-24 bg-white">
+      <div class="max-w-6xl mx-auto bg-[#00AB8E] rounded-[80px] p-24 text-center relative overflow-hidden">
+        <div class="relative z-10">
+          <h2 class="text-6xl font-bold text-white mb-10 tracking-tight leading-[1.1]">Ready to transform your <br/><span class="editorial-serif text-white/90">Spectrum?</span></h2>
+          <a href="#book" id="cta-about-book" class="inline-block px-12 py-5 bg-white text-[#00AB8E] rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform orange-glow">
+            Book Your Experience
+          </a>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-white/5"></div>
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/10"></div>
+      </div>
+    </section>
+
+    <!-- Footer Component Integration -->
+    <!-- component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+<div v-scope="{ ...{&quot;cutHref&quot;:&quot;#signature-cut&quot;,&quot;colorHref&quot;:&quot;#botanical-color&quot;,&quot;treatmentHref&quot;:&quot;#scalp-therapy&quot;,&quot;stylingHref&quot;:&quot;#event-styling&quot;,&quot;aboutHref&quot;:&quot;#our-story&quot;,&quot;philosophyHref&quot;:&quot;#sustainability&quot;,&quot;careersHref&quot;:&quot;#careers&quot;,&quot;contactHref&quot;:&quot;#contact&quot;,&quot;instagramHref&quot;:&quot;https://instagram.com&quot;,&quot;facebookHref&quot;:&quot;https://facebook.com&quot;,&quot;linkedinHref&quot;:&quot;https://linkedin.com&quot;}, $emit() {} }">
+<footer class="py-24 px-12 lg:px-24 border-t border-[#929292]/10 bg-white">
+  <div class="grid md:grid-cols-4 gap-12 mb-20">
+    <div class="col-span-1 md:col-span-1">
+      <div class="flex items-center gap-2 mb-8">
+        <div class="w-6 h-6 bg-[#00AB8E] rounded-sm rotate-45"></div>
+        <span class="text-xl font-bold tracking-tighter">VERIDIA.</span>
+      </div>
+      <p class="text-[#929292] text-sm leading-relaxed">
+        Crafting beauty through botanical intelligence. <br/>Part of the Global Eco-Salon Collective.
+      </p>
+    </div>
+    
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Services</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="cutHref" class="hover:text-[#00AB8E] transition-colors">Signature Cut</a></li>
+        <li><a :href="colorHref" class="hover:text-[#00AB8E] transition-colors">Botanical Color</a></li>
+        <li><a :href="treatmentHref" class="hover:text-[#00AB8E] transition-colors">Scalp Therapy</a></li>
+        <li><a :href="stylingHref" class="hover:text-[#00AB8E] transition-colors">Event Styling</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Studio</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="aboutHref" class="hover:text-[#00AB8E] transition-colors">Our Story</a></li>
+        <li><a :href="philosophyHref" class="hover:text-[#00AB8E] transition-colors">Sustainability</a></li>
+        <li><a :href="careersHref" class="hover:text-[#00AB8E] transition-colors">Careers</a></li>
+        <li><a :href="contactHref" class="hover:text-[#00AB8E] transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Newsletter</h6>
+      <p class="text-[#929292] text-sm">Get seasonal treatment tips and exclusive studio invites.</p>
+      <div class="relative">
+        <input type="email" placeholder="Email Address" class="w-full bg-[#929292]/5 border border-[#929292]/20 py-3 px-4 rounded-lg focus:outline-none focus:border-[#00AB8E] text-sm">
+        <button @click="$emit('subscribe')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00AB8E] font-bold text-sm hover:opacity-80 transition-opacity">Join</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#929292]/10 gap-6">
+    <span class="text-[#929292] text-xs font-medium uppercase tracking-[0.2em]">&copy; 2024 Veridia Hair Artistry. All Rights Reserved.</span>
+    <div class="flex gap-8">
+      <a :href="instagramHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:instagram" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="facebookHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:facebook" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="linkedinHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:linkedin" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- /component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+  </div>
+</body>
+</html>
+```
+
+Please reference this design and implement it into our codebase; Try to understand the structure, which part of our codebase is relevant and implement

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veridia Salon | Eco-Premium Hair Artistry</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;700&display=swap');
+
+    :root {
+      --primary-green: #00AB8E;
+      --secondary-gold: #F0B13D;
+      --structural-grey: #929292;
+    }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .editorial-serif {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    .cube-border::after {
+      content: '';
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 40px;
+      height: 40px;
+      border-top: 3px solid var(--secondary-gold);
+      border-right: 3px solid var(--secondary-gold);
+      z-index: 10;
+    }
+
+    .orange-glow {
+      box-shadow: 0 0 25px rgba(240, 177, 61, 0.3);
+    }
+
+    .service-card {
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 171, 142, 0.1);
+    }
+
+    .bridge-line {
+      height: 2px;
+      background: linear-gradient(90deg, #00AB8E, #F0B13D);
+      opacity: 0.3;
+      width: 100%;
+    }
+
+    .geometric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      opacity: 0.1;
+    }
+
+    .letter-spacing-badge {
+      letter-spacing: 0.2em;
+    }
+  </style>
+  <style>sd-component { display: block; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.js" defer init></script>
+</head>
+<body>
+  <div class="min-h-screen bg-white">
+    <!-- Navigation -->
+    <!-- component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+<div v-scope="{ ...{&quot;activeItem&quot;:&quot;home&quot;,&quot;homeHref&quot;:&quot;./&quot;,&quot;servicesHref&quot;:&quot;./pages/02-our-services-veridia-salon-catalog.html&quot;,&quot;stylistsHref&quot;:&quot;./pages/04-stylist-selection-veridia-salon.html&quot;,&quot;galleryHref&quot;:&quot;./pages/03-gallery-salon.html&quot;,&quot;aboutHref&quot;:&quot;./pages/01-about-salon.html&quot;,&quot;reviewsHref&quot;:&quot;./pages/04-reviews.html&quot;,&quot;contactHref&quot;:&quot;./pages/02-contact-location.html&quot;,&quot;bookHref&quot;:&quot;./pages/03-eco-premium-booking-interface.html&quot;}, $emit() {} }">
+<nav class="fixed top-0 left-0 right-0 h-[80px] bg-white/95 backdrop-blur-[12px] border-b border-[#929292]/20 z-50 flex items-center justify-between px-12">
+  <a :href="homeHref" class="flex items-center gap-2 decoration-transparent">
+    <div class="w-8 h-8 bg-[#00AB8E] rounded-sm rotate-45 flex items-center justify-center">
+      <iconify-icon icon="lucide:leaf" class="text-white -rotate-45 text-sm"></iconify-icon>
+    </div>
+    <span class="text-xl font-bold tracking-tighter text-[#0a0a0a]">VERIDIA<span class="text-[#00AB8E]">.</span></span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-10">
+    <a :href="servicesHref" :class="activeItem === 'services' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Services</a>
+    <a :href="stylistsHref" :class="activeItem === 'stylists' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Stylists</a>
+    <a :href="galleryHref" :class="activeItem === 'gallery' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Gallery</a>
+    <a :href="aboutHref" :class="activeItem === 'about' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">About</a>
+    <a :href="reviewsHref" :class="activeItem === 'reviews' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Reviews</a>
+    <a :href="contactHref" :class="activeItem === 'contact' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Contact Us</a>
+  </div>
+
+  <a :href="bookHref" class="px-8 py-3 bg-[#00AB8E] text-white rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#00967d] transition-all">
+    Book Appointment
+  </a>
+</nav>
+</div>
+<!-- /component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-24 px-12 lg:px-24">
+      <div class="grid lg:grid-cols-[60%_40%] gap-16 items-center">
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-3 bg-[#00AB8E]/10 px-4 py-2 rounded-full">
+            <iconify-icon icon="lucide:leaf" class="text-[#00AB8E]"></iconify-icon>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#00AB8E]">Sustainable Hair Artistry</span>
+          </div>
+          <h1 class="text-7xl font-bold text-[#0a0a0a] leading-[1.1] tracking-tight">
+            The Purest <br/>
+            <span class="editorial-serif font-serif italic font-bold">Aesthetic</span> for <br/>
+            Nature Seekers.
+          </h1>
+          <p class="text-[#929292] text-xl max-w-xl leading-relaxed">
+            High-end botanical treatments meet architectural precision. Experience salon luxury that respects the earth and your biology.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="./pages/02-our-services-veridia-salon-catalog.html" id="hero-cta-primary" class="px-10 py-4 bg-[#00AB8E] text-white rounded-full text-[14px] font-bold uppercase tracking-widest orange-glow hover:scale-105 transition-transform">
+              View Catalog
+            </a>
+            <a href="./pages/01-about-salon.html" id="hero-cta-ghost" class="px-10 py-4 border-2 border-[#929292]/30 text-[#0a0a0a] rounded-full text-[14px] font-bold uppercase tracking-widest hover:border-[#0a0a0a] transition-colors">
+              Our Philosophy
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="relative rounded-3xl overflow-hidden cube-border shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop" alt="Premium Salon Interior" class="w-full aspect-[4/5] object-cover">
+          </div>
+          <!-- Floating Stats Card -->
+          <div class="absolute -bottom-6 -left-6 bg-[#F0B13D] p-6 rounded-2xl shadow-xl max-w-[200px]">
+            <div class="text-white space-y-1">
+              <span class="block text-3xl font-bold">98%</span>
+              <span class="block text-[10px] uppercase font-bold tracking-widest opacity-80">Organic Ingredients</span>
+            </div>
+            <div class="mt-4 border-t border-white/20 pt-4">
+              <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+              <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+              <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+              <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+              <iconify-icon icon="lucide:star" class="text-white"></iconify-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Bridge Section -->
+    <section class="py-24 px-12 lg:px-24 bg-[#929292]/5">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 items-center gap-12">
+          <!-- Left Part -->
+          <div class="bg-white p-10 rounded-[40px] shadow-sm">
+            <iconify-icon icon="lucide:beaker" class="text-3xl text-[#00AB8E] mb-6"></iconify-icon>
+            <h3 class="text-2xl font-bold mb-4">Scientific Precision</h3>
+            <p class="text-[#929292] leading-relaxed">Molecular hair mapping and advanced scalp analysis for every client.</p>
+          </div>
+
+          <!-- Center Bridge -->
+          <div class="flex flex-col items-center">
+            <div class="bridge-line mb-6"></div>
+            <div class="px-8 py-3 bg-[#F0B13D] text-white rounded-full text-[10px] font-bold uppercase tracking-[0.3em] whitespace-nowrap shadow-lg shadow-[#F0B13D]/20">
+              The Bridge
+            </div>
+            <div class="bridge-line mt-6"></div>
+          </div>
+
+          <!-- Right Part -->
+          <div class="bg-white p-10 rounded-[40px] shadow-sm">
+            <iconify-icon icon="lucide:flower-2" class="text-3xl text-[#F0B13D] mb-6"></iconify-icon>
+            <h3 class="text-2xl font-bold mb-4">Organic Soul</h3>
+            <p class="text-[#929292] leading-relaxed">Sustainably sourced botanicals and essential oils for restorative care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tiered Product Grid (Service Tiers) -->
+    <section class="py-32 px-12 lg:px-24">
+      <div class="text-center mb-20">
+        <span class="text-[12px] font-bold uppercase tracking-[0.2em] text-[#929292]">Service Menus</span>
+        <h2 class="text-5xl font-bold mt-4">Select Your Experience</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 items-start">
+        <!-- Tier 1 -->
+        <div class="service-card bg-white border border-[#929292]/10 rounded-[32px] p-8">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-8">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover" alt="Standard Styling">
+          </div>
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-[#00AB8E] mb-2 block">Essential</span>
+              <h4 class="text-2xl font-bold">The Signature Cut</h4>
+            </div>
+            <span class="text-2xl font-bold">$85</span>
+          </div>
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a]">Organic Scalp Massage</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a]">Precision Trim</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a]">Botanical Blow-out</span>
+            </li>
+          </ul>
+          <button class="w-12 h-12 rounded-full bg-[#929292]/5 hover:bg-[#00AB8E] hover:text-white flex items-center justify-center transition-all group">
+            <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+          </button>
+        </div>
+
+        <!-- Tier 2 - Emphasized -->
+        <div class="service-card bg-white border-2 border-[#F0B13D] ring-8 ring-[#F0B13D]/5 rounded-[32px] p-8 -mt-6 md:scale-105">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-8">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1787&auto=format&fit=crop" class="w-full h-full object-cover" alt="Luxury Coloring">
+          </div>
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <span class="inline-block px-3 py-1 bg-[#F0B13D] text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-2">Premium Choice</span>
+              <h4 class="text-2xl font-bold">Luminous Color</h4>
+            </div>
+            <span class="text-2xl font-bold">$220</span>
+          </div>
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a] font-medium">Custom Color Synthesis</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a] font-medium">Keratin Deep Infusion</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a] font-medium">Style Transformation</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a] font-medium">Take-home Detox Kit</span>
+            </li>
+          </ul>
+          <button class="w-full py-4 bg-[#F0B13D] text-white font-bold uppercase tracking-widest rounded-xl orange-glow hover:opacity-90 transition-all">
+            Book Exclusive
+          </button>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="service-card bg-white border border-[#929292]/10 rounded-[32px] p-8">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-8">
+            <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover" alt="Botanic Therapy">
+          </div>
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-[#00AB8E] mb-2 block">Restorative</span>
+              <h4 class="text-2xl font-bold">Flora Treatment</h4>
+            </div>
+            <span class="text-2xl font-bold">$145</span>
+          </div>
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a]">Steam Extraction</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a]">Essential Oil Hydration</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:check" class="text-[#00AB8E]"></iconify-icon>
+              <span class="text-sm text-[#0a0a0a]">Scalp Micro-Needling</span>
+            </li>
+          </ul>
+          <button class="w-12 h-12 rounded-full bg-[#929292]/5 hover:bg-[#00AB8E] hover:text-white flex items-center justify-center transition-all">
+            <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dark Expansion Section -->
+    <section class="py-32 bg-[#0a0a0a] text-white overflow-hidden relative">
+      <div class="px-12 lg:px-24 grid md:grid-cols-2 gap-20 items-center relative z-10">
+        <div class="space-y-12">
+          <div>
+            <span class="editorial-serif italic text-[#F0B13D] text-2xl">Global Presence</span>
+            <h2 class="text-5xl font-bold mt-4 tracking-tight">Local Soul, <br/>Botanical Standards.</h2>
+          </div>
+          
+          <div class="space-y-8">
+            <div class="flex items-center gap-6 group cursor-pointer">
+              <div class="w-4 h-4 rounded-full bg-[#00AB8E] shadow-[0_0_12px_#00AB8E]"></div>
+              <div>
+                <h5 class="text-xl font-bold group-hover:text-[#00AB8E] transition-colors">Oslo Flagship</h5>
+                <p class="text-[#929292] text-sm">The Carbon Neutral Sanctuary • 08:00 - 20:00</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-6 group cursor-pointer">
+              <div class="w-4 h-4 rounded-full bg-[#F0B13D] shadow-[0_0_12px_#F0B13D]"></div>
+              <div>
+                <h5 class="text-xl font-bold group-hover:text-[#F0B13D] transition-colors">London Studio</h5>
+                <p class="text-[#929292] text-sm">Regent’s Canal Organic Loft • 09:00 - 21:00</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-6 group cursor-pointer">
+              <div class="w-4 h-4 rounded-full bg-[#005c4b]"></div>
+              <div>
+                <h5 class="text-xl font-bold">Copenhagen Hub</h5>
+                <p class="text-[#929292] text-sm">Minimalist Collective Space • Opening Soon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex justify-center">
+          <!-- Geometric Grid Pattern -->
+          <div class="geometric-grid absolute inset-0 pointer-events-none">
+            <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+            <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+            <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+            <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+          </div>
+          
+          <div class="relative p-12">
+            <iconify-icon icon="lucide:map-pin" class="text-6xl text-[#F0B13D] absolute top-0 left-0 animate-bounce" style="animation-duration: 3s"></iconify-icon>
+            <iconify-icon icon="lucide:map-pin" class="text-4xl text-[#00AB8E] absolute bottom-10 right-20 animate-bounce" style="animation-delay: 1s; animation-duration: 4s"></iconify-icon>
+            <div class="w-64 h-64 rounded-full border border-white/10 flex items-center justify-center">
+              <div class="w-48 h-48 rounded-full border border-[#00AB8E]/30 flex items-center justify-center">
+                <div class="w-32 h-32 rounded-full bg-[#00AB8E]/20 flex items-center justify-center">
+                   <iconify-icon icon="lucide:globe" class="text-4xl text-white/40"></iconify-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 px-12 lg:px-24 bg-white">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div class="max-w-xl">
+          <span class="text-[12px] font-bold uppercase tracking-[0.2em] text-[#00AB8E]">Voices of Veridia</span>
+          <h2 class="text-5xl font-bold mt-4 leading-tight">Refined by the <br/>Nature of Our Clients.</h2>
+        </div>
+        <a href="./pages/04-reviews.html" id="view-all-reviews" class="text-[14px] font-bold uppercase tracking-widest border-b-2 border-[#00AB8E] pb-2 text-[#00AB8E]">View All Reviews</a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="space-y-6">
+          <p class="text-2xl leading-relaxed text-[#0a0a0a]">"The atmosphere alone is a treatment. My hair has never felt more alive than after the Botanical Blow-out."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden bg-[#929292]/10">
+              <img src="https://i.pravatar.cc/150?u=a1" alt="User" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <span class="block font-bold">Elena Vance</span>
+              <span class="text-xs text-[#929292] uppercase tracking-widest font-bold">Creative Director</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6 md:pt-12">
+          <p class="text-2xl leading-relaxed text-[#0a0a0a]">"Veridia bridges luxury with actual conscience. Every visit feels like a contribution to myself and the planet."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden bg-[#929292]/10">
+              <img src="https://i.pravatar.cc/150?u=a2" alt="User" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <span class="block font-bold">Marcus Thorne</span>
+              <span class="text-xs text-[#929292] uppercase tracking-widest font-bold">Architect</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <p class="text-2xl leading-relaxed text-[#0a0a0a]">"I was skeptical about organic dyes, but the Luminous Color tier exceeded every chemical brand I've ever used."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden bg-[#929292]/10">
+              <img src="https://i.pravatar.cc/150?u=a3" alt="User" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <span class="block font-bold">Sarah Jenkins</span>
+              <span class="text-xs text-[#929292] uppercase tracking-widest font-bold">Stylist</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+<div v-scope="{ ...{&quot;cutHref&quot;:&quot;./pages/02-our-services-veridia-salon-catalog.html&quot;,&quot;colorHref&quot;:&quot;./pages/02-our-services-veridia-salon-catalog.html&quot;,&quot;treatmentHref&quot;:&quot;./pages/02-our-services-veridia-salon-catalog.html&quot;,&quot;stylingHref&quot;:&quot;./pages/02-our-services-veridia-salon-catalog.html&quot;,&quot;aboutHref&quot;:&quot;./pages/01-about-salon.html&quot;,&quot;philosophyHref&quot;:&quot;./pages/01-about-salon.html&quot;,&quot;careersHref&quot;:&quot;./pages/01-about-salon.html&quot;,&quot;contactHref&quot;:&quot;./pages/02-contact-location.html&quot;,&quot;instagramHref&quot;:&quot;https://instagram.com&quot;,&quot;facebookHref&quot;:&quot;https://facebook.com&quot;,&quot;linkedinHref&quot;:&quot;https://linkedin.com&quot;}, $emit() {} }">
+<footer class="py-24 px-12 lg:px-24 border-t border-[#929292]/10 bg-white">
+  <div class="grid md:grid-cols-4 gap-12 mb-20">
+    <div class="col-span-1 md:col-span-1">
+      <div class="flex items-center gap-2 mb-8">
+        <div class="w-6 h-6 bg-[#00AB8E] rounded-sm rotate-45"></div>
+        <span class="text-xl font-bold tracking-tighter">VERIDIA.</span>
+      </div>
+      <p class="text-[#929292] text-sm leading-relaxed">
+        Crafting beauty through botanical intelligence. <br/>Part of the Global Eco-Salon Collective.
+      </p>
+    </div>
+    
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Services</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="cutHref" class="hover:text-[#00AB8E] transition-colors">Signature Cut</a></li>
+        <li><a :href="colorHref" class="hover:text-[#00AB8E] transition-colors">Botanical Color</a></li>
+        <li><a :href="treatmentHref" class="hover:text-[#00AB8E] transition-colors">Scalp Therapy</a></li>
+        <li><a :href="stylingHref" class="hover:text-[#00AB8E] transition-colors">Event Styling</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Studio</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="aboutHref" class="hover:text-[#00AB8E] transition-colors">Our Story</a></li>
+        <li><a :href="philosophyHref" class="hover:text-[#00AB8E] transition-colors">Sustainability</a></li>
+        <li><a :href="careersHref" class="hover:text-[#00AB8E] transition-colors">Careers</a></li>
+        <li><a :href="contactHref" class="hover:text-[#00AB8E] transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Newsletter</h6>
+      <p class="text-[#929292] text-sm">Get seasonal treatment tips and exclusive studio invites.</p>
+      <div class="relative">
+        <input type="email" placeholder="Email Address" class="w-full bg-[#929292]/5 border border-[#929292]/20 py-3 px-4 rounded-lg focus:outline-none focus:border-[#00AB8E] text-sm">
+        <button @click="$emit('subscribe')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00AB8E] font-bold text-sm hover:opacity-80 transition-opacity">Join</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#929292]/10 gap-6">
+    <span class="text-[#929292] text-xs font-medium uppercase tracking-[0.2em]">&copy; 2024 Veridia Hair Artistry. All Rights Reserved.</span>
+    <div class="flex gap-8">
+      <a :href="instagramHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:instagram" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="facebookHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:facebook" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="linkedinHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:linkedin" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- /component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+  </div>
+</body>
+</html>

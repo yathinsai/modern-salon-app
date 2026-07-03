@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed | Veridia Salon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;700&display=swap');
+
+    :root {
+      --primary-green: #00AB8E;
+      --secondary-gold: #F0B13D;
+      --structural-grey: #929292;
+    }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .editorial-serif {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    .orange-glow {
+      box-shadow: 0 0 25px rgba(240, 177, 61, 0.3);
+    }
+
+    .success-icon-bg {
+      animation: pulse-green 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-green {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+    }
+
+    .confirmation-card {
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .geometric-accent {
+      opacity: 0.05;
+      pointer-events: none;
+    }
+  </style>
+  <style>sd-component { display: block; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.js" defer init></script>
+</head>
+<body>
+  <div class="min-h-screen bg-[#FFFFFF] flex flex-col">
+    <!-- Navigation -->
+    <!-- component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+<div v-scope="{ ...{&quot;activeItem&quot;:&quot;book&quot;,&quot;homeHref&quot;:&quot;../&quot;,&quot;servicesHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;stylistsHref&quot;:&quot;./04-stylist-selection-veridia-salon.html&quot;,&quot;galleryHref&quot;:&quot;./03-gallery-salon.html&quot;,&quot;aboutHref&quot;:&quot;./01-about-salon.html&quot;,&quot;reviewsHref&quot;:&quot;./04-reviews.html&quot;,&quot;contactHref&quot;:&quot;./02-contact-location.html&quot;,&quot;bookHref&quot;:&quot;./03-eco-premium-booking-interface.html&quot;}, $emit() {} }">
+<nav class="fixed top-0 left-0 right-0 h-[80px] bg-white/95 backdrop-blur-[12px] border-b border-[#929292]/20 z-50 flex items-center justify-between px-12">
+  <a :href="homeHref" class="flex items-center gap-2 decoration-transparent">
+    <div class="w-8 h-8 bg-[#00AB8E] rounded-sm rotate-45 flex items-center justify-center">
+      <iconify-icon icon="lucide:leaf" class="text-white -rotate-45 text-sm"></iconify-icon>
+    </div>
+    <span class="text-xl font-bold tracking-tighter text-[#0a0a0a]">VERIDIA<span class="text-[#00AB8E]">.</span></span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-10">
+    <a :href="servicesHref" :class="activeItem === 'services' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Services</a>
+    <a :href="stylistsHref" :class="activeItem === 'stylists' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Stylists</a>
+    <a :href="galleryHref" :class="activeItem === 'gallery' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Gallery</a>
+    <a :href="aboutHref" :class="activeItem === 'about' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">About</a>
+    <a :href="reviewsHref" :class="activeItem === 'reviews' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Reviews</a>
+    <a :href="contactHref" :class="activeItem === 'contact' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Contact Us</a>
+  </div>
+
+  <a :href="bookHref" class="px-8 py-3 bg-[#00AB8E] text-white rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#00967d] transition-all">
+    Book Appointment
+  </a>
+</nav>
+</div>
+<!-- /component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+
+    <main class="flex-grow pt-32 pb-24 px-6 md:px-12 lg:px-24">
+      <div class="max-w-4xl mx-auto">
+        <!-- Success Header -->
+        <div class="text-center space-y-6 mb-16">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-[#00AB8E] rounded-full text-white success-icon-bg mb-4">
+            <iconify-icon icon="lucide:check" class="text-4xl"></iconify-icon>
+          </div>
+          <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-[#0a0a0a]">
+            Appointment <span class="editorial-serif italic">Confirmed</span>
+          </h1>
+          <p class="text-[#929292] text-lg max-w-lg mx-auto leading-relaxed">
+            Your session at Veridia is secured. A confirmation email with details and preparation steps has been sent to your inbox.
+          </p>
+          <div class="inline-block px-6 py-2 bg-[#929292]/5 border border-[#929292]/20 rounded-full">
+            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#929292]">Reference: #VRD-8294X</span>
+          </div>
+        </div>
+
+        <!-- Summary Card -->
+        <div class="bg-white border border-[#929292]/10 rounded-[40px] shadow-2xl shadow-[#00AB8E]/5 overflow-hidden confirmation-card">
+          <div class="grid md:grid-cols-2">
+            
+            <!-- Left: Appointment Details -->
+            <div class="p-10 lg:p-12 border-b md:border-b-0 md:border-r border-[#929292]/10">
+              <div class="space-y-10">
+                <!-- Date & Time -->
+                <div class="flex items-start gap-5">
+                  <div class="w-12 h-12 rounded-2xl bg-[#00AB8E]/10 flex items-center justify-center text-[#00AB8E]">
+                    <iconify-icon icon="lucide:calendar" class="text-2xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] font-bold uppercase tracking-widest text-[#929292] mb-1">Date & Time</span>
+                    <p class="text-xl font-bold text-[#0a0a0a]">Thursday, Oct 24th</p>
+                    <p class="text-[#00AB8E] font-medium">10:30 AM — 12:45 PM</p>
+                  </div>
+                </div>
+
+                <!-- Service -->
+                <div class="flex items-start gap-5">
+                  <div class="w-12 h-12 rounded-2xl bg-[#F0B13D]/10 flex items-center justify-center text-[#F0B13D]">
+                    <iconify-icon icon="lucide:scissors" class="text-2xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] font-bold uppercase tracking-widest text-[#929292] mb-1">Service Selected</span>
+                    <p class="text-xl font-bold text-[#0a0a0a]">Luminous Color Transformation</p>
+                    <div class="flex items-center gap-4 mt-1">
+                      <span class="text-sm text-[#929292]">135 Minutes</span>
+                      <span class="w-1 h-1 rounded-full bg-[#929292]/30"></span>
+                      <span class="text-sm font-bold text-[#0a0a0a]">$220</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Location -->
+                <div class="flex items-start gap-5">
+                  <div class="w-12 h-12 rounded-2xl bg-[#929292]/10 flex items-center justify-center text-[#929292]">
+                    <iconify-icon icon="lucide:map-pin" class="text-2xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] font-bold uppercase tracking-widest text-[#929292] mb-1">Studio Location</span>
+                    <p class="text-xl font-bold text-[#0a0a0a]">Oslo Flagship Sanctuary</p>
+                    <p class="text-sm text-[#929292] mt-1">Henrik Ibsens gate 60C, 0255 Oslo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Stylist & Next Steps -->
+            <div class="p-10 lg:p-12 bg-[#929292]/5">
+              <div class="space-y-10">
+                <!-- Stylist Profile -->
+                <div class="flex items-center gap-6">
+                  <div class="relative">
+                    <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-white shadow-lg">
+                      <img src="https://i.pravatar.cc/150?u=stylist1" alt="Soren Nielsen" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-1 -right-1 bg-[#F0B13D] text-white w-6 h-6 rounded-full flex items-center justify-center border-2 border-white">
+                      <iconify-icon icon="lucide:star" class="text-[10px]"></iconify-icon>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] font-bold uppercase tracking-widest text-[#929292] mb-1">Your Artist</span>
+                    <h4 class="text-2xl font-bold">Soren Nielsen</h4>
+                    <p class="text-sm text-[#00AB8E] font-medium">Master Colorist • Senior Artist</p>
+                  </div>
+                </div>
+
+                <!-- Next Steps Guide -->
+                <div class="bg-white/60 rounded-3xl p-6 border border-white">
+                  <h5 class="text-xs font-bold uppercase tracking-widest text-[#0a0a0a] mb-4">Next Steps</h5>
+                  <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                      <div class="w-5 h-5 rounded-full bg-[#00AB8E]/10 flex items-center justify-center mt-0.5">
+                        <span class="text-[10px] font-bold text-[#00AB8E]">1</span>
+                      </div>
+                      <p class="text-xs text-[#929292] leading-relaxed">Arrive 10 minutes early for your botanical consultation.</p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <div class="w-5 h-5 rounded-full bg-[#00AB8E]/10 flex items-center justify-center mt-0.5">
+                        <span class="text-[10px] font-bold text-[#00AB8E]">2</span>
+                      </div>
+                      <p class="text-xs text-[#929292] leading-relaxed">Avoid washing your hair 24 hours prior to color sessions.</p>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Actions -->
+                <div class="grid grid-cols-2 gap-4">
+                  <a href="#" id="btn-add-calendar" class="flex items-center justify-center gap-2 py-4 bg-[#0a0a0a] text-white rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-[#00AB8E] transition-all">
+                    <iconify-icon icon="lucide:plus"></iconify-icon>
+                    Calendar
+                  </a>
+                  <a href="#" id="btn-reschedule" class="flex items-center justify-center gap-2 py-4 border border-[#929292]/30 text-[#0a0a0a] rounded-2xl text-xs font-bold uppercase tracking-widest hover:border-[#0a0a0a] transition-all">
+                    Reschedule
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact/Help Footer -->
+        <div class="mt-12 text-center flex flex-col items-center gap-4">
+          <p class="text-sm text-[#929292]">Need to make adjustments? We're here to help.</p>
+          <div class="flex items-center gap-8">
+            <a href="tel:+4712345678" id="contact-phone" class="flex items-center gap-2 text-[#0a0a0a] font-bold hover:text-[#00AB8E] transition-colors">
+              <iconify-icon icon="lucide:phone" class="text-[#00AB8E]"></iconify-icon>
+              +47 123 45 678
+            </a>
+            <a href="mailto:oslo@veridia.hair" id="contact-email" class="flex items-center gap-2 text-[#0a0a0a] font-bold hover:text-[#00AB8E] transition-colors">
+              <iconify-icon icon="lucide:mail" class="text-[#00AB8E]"></iconify-icon>
+              oslo@veridia.hair
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+<div v-scope="{ ...{&quot;cutHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;colorHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;treatmentHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;stylingHref&quot;:&quot;./02-our-services-veridia-salon-catalog.html&quot;,&quot;aboutHref&quot;:&quot;./01-about-salon.html&quot;,&quot;philosophyHref&quot;:&quot;./01-about-salon.html&quot;,&quot;careersHref&quot;:&quot;./01-about-salon.html&quot;,&quot;contactHref&quot;:&quot;./02-contact-location.html&quot;,&quot;instagramHref&quot;:&quot;https://instagram.com&quot;,&quot;facebookHref&quot;:&quot;https://facebook.com&quot;,&quot;linkedinHref&quot;:&quot;https://linkedin.com&quot;}, $emit() {} }">
+<footer class="py-24 px-12 lg:px-24 border-t border-[#929292]/10 bg-white">
+  <div class="grid md:grid-cols-4 gap-12 mb-20">
+    <div class="col-span-1 md:col-span-1">
+      <div class="flex items-center gap-2 mb-8">
+        <div class="w-6 h-6 bg-[#00AB8E] rounded-sm rotate-45"></div>
+        <span class="text-xl font-bold tracking-tighter">VERIDIA.</span>
+      </div>
+      <p class="text-[#929292] text-sm leading-relaxed">
+        Crafting beauty through botanical intelligence. <br/>Part of the Global Eco-Salon Collective.
+      </p>
+    </div>
+    
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Services</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="cutHref" class="hover:text-[#00AB8E] transition-colors">Signature Cut</a></li>
+        <li><a :href="colorHref" class="hover:text-[#00AB8E] transition-colors">Botanical Color</a></li>
+        <li><a :href="treatmentHref" class="hover:text-[#00AB8E] transition-colors">Scalp Therapy</a></li>
+        <li><a :href="stylingHref" class="hover:text-[#00AB8E] transition-colors">Event Styling</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Studio</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="aboutHref" class="hover:text-[#00AB8E] transition-colors">Our Story</a></li>
+        <li><a :href="philosophyHref" class="hover:text-[#00AB8E] transition-colors">Sustainability</a></li>
+        <li><a :href="careersHref" class="hover:text-[#00AB8E] transition-colors">Careers</a></li>
+        <li><a :href="contactHref" class="hover:text-[#00AB8E] transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Newsletter</h6>
+      <p class="text-[#929292] text-sm">Get seasonal treatment tips and exclusive studio invites.</p>
+      <div class="relative">
+        <input type="email" placeholder="Email Address" class="w-full bg-[#929292]/5 border border-[#929292]/20 py-3 px-4 rounded-lg focus:outline-none focus:border-[#00AB8E] text-sm">
+        <button @click="$emit('subscribe')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00AB8E] font-bold text-sm hover:opacity-80 transition-opacity">Join</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#929292]/10 gap-6">
+    <span class="text-[#929292] text-xs font-medium uppercase tracking-[0.2em]">&copy; 2024 Veridia Hair Artistry. All Rights Reserved.</span>
+    <div class="flex gap-8">
+      <a :href="instagramHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:instagram" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="facebookHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:facebook" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="linkedinHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:linkedin" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- /component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+  </div>
+</body>
+</html>

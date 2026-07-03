@@ -1,0 +1,336 @@
+Page: Gallery | Veridia Hair Artistry
+
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Veridia Hair Artistry</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;700&display=swap');
+
+    :root {
+      --primary-green: #00AB8E;
+      --secondary-gold: #F0B13D;
+      --structural-grey: #929292;
+      --deep-slate: #0a0a0a;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: var(--deep-slate);
+    }
+
+    .editorial-serif {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    .masonry-grid {
+      column-count: 1;
+      column-gap: 1.5rem;
+    }
+    @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+    @media (min-width: 1024px) { .masonry-grid { column-count: 4; } }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px);
+    }
+
+    .before-after-overlay {
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .gallery-item:hover .before-after-overlay {
+      opacity: 1;
+    }
+
+    .geometric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      opacity: 0.1;
+    }
+
+    .floating-badge {
+      box-shadow: 0 4px 12px rgba(0, 171, 142, 0.2);
+    }
+
+    .glow-gold {
+      box-shadow: 0 0 25px rgba(240, 177, 61, 0.3);
+    }
+  </style>
+  <style>sd-component { display: block; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.js" defer init></script>
+</head>
+<body>
+  <div class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <!-- component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+<div v-scope="{ ...{&quot;activeItem&quot;:&quot;gallery&quot;,&quot;homeHref&quot;:&quot;#home&quot;,&quot;servicesHref&quot;:&quot;#services&quot;,&quot;stylistsHref&quot;:&quot;#stylists&quot;,&quot;galleryHref&quot;:&quot;#gallery&quot;,&quot;aboutHref&quot;:&quot;#about&quot;,&quot;bookHref&quot;:&quot;#book&quot;}, $emit() {} }">
+<nav class="fixed top-0 left-0 right-0 h-[80px] bg-white/95 backdrop-blur-[12px] border-b border-[#929292]/20 z-50 flex items-center justify-between px-12">
+  <a :href="homeHref" class="flex items-center gap-2 decoration-transparent">
+    <div class="w-8 h-8 bg-[#00AB8E] rounded-sm rotate-45 flex items-center justify-center">
+      <iconify-icon icon="lucide:leaf" class="text-white -rotate-45 text-sm"></iconify-icon>
+    </div>
+    <span class="text-xl font-bold tracking-tighter text-[#0a0a0a]">VERIDIA<span class="text-[#00AB8E]">.</span></span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-10">
+    <a :href="servicesHref" :class="activeItem === 'services' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Services</a>
+    <a :href="stylistsHref" :class="activeItem === 'stylists' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Stylists</a>
+    <a :href="galleryHref" :class="activeItem === 'gallery' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">Gallery</a>
+    <a :href="aboutHref" :class="activeItem === 'about' ? 'text-[#00AB8E]' : 'text-[#0a0a0a]'" class="text-[12px] font-bold uppercase tracking-widest hover:text-[#00AB8E] transition-colors">About</a>
+  </div>
+
+  <a :href="bookHref" class="px-8 py-3 bg-[#00AB8E] text-white rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#00967d] transition-all">
+    Book Appointment
+  </a>
+</nav>
+</div>
+<!-- /component: NavigationBar (c3c1e7c2-bedb-4625-b6ff-c14bdc54cd6e) -->
+
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section class="pt-40 pb-20 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+            <div class="max-w-2xl">
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#00AB8E] mb-4 block">Visual Archives</span>
+              <h1 class="text-6xl md:text-7xl font-bold tracking-tight">
+                Our <span class="editorial-serif">Gallery</span> & <br/>Modern Artistry.
+              </h1>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <button class="px-6 py-2 rounded-full bg-[#00AB8E] text-white text-xs font-bold uppercase tracking-widest transition-all">All Work</button>
+              <button class="px-6 py-2 rounded-full border border-[#929292]/20 text-xs font-bold uppercase tracking-widest hover:border-[#00AB8E] hover:text-[#00AB8E] transition-all">Before/After</button>
+              <button class="px-6 py-2 rounded-full border border-[#929292]/20 text-xs font-bold uppercase tracking-widest hover:border-[#00AB8E] hover:text-[#00AB8E] transition-all">Ambiance</button>
+              <button class="px-6 py-2 rounded-full border border-[#929292]/20 text-xs font-bold uppercase tracking-widest hover:border-[#00AB8E] hover:text-[#00AB8E] transition-all">Team</button>
+            </div>
+          </div>
+
+          <!-- Gallery Masonry -->
+          <div class="masonry-grid">
+            <!-- Item 1: Before After -->
+            <div class="gallery-item relative group rounded-3xl overflow-hidden cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=2000&auto=format&fit=crop" class="w-full h-auto" alt="Transformation 1">
+              <div class="before-after-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="lucide:sparkles" class="text-[#F0B13D]"></iconify-icon>
+                  <span class="text-[10px] text-white font-bold uppercase tracking-widest">Botanical Color</span>
+                </div>
+                <h4 class="text-white font-bold">Dimensional Lume</h4>
+                <p class="text-white/60 text-xs">by Elena Vance</p>
+                <div class="flex mt-3">
+                  <iconify-icon icon="lucide:star" class="text-[#F0B13D] text-xs"></iconify-icon>
+                  <iconify-icon icon="lucide:star" class="text-[#F0B13D] text-xs"></iconify-icon>
+                  <iconify-icon icon="lucide:star" class="text-[#F0B13D] text-xs"></iconify-icon>
+                  <iconify-icon icon="lucide:star" class="text-[#F0B13D] text-xs"></iconify-icon>
+                  <iconify-icon icon="lucide:star" class="text-[#F0B13D] text-xs"></iconify-icon>
+                </div>
+              </div>
+              <div class="absolute top-4 left-4 bg-[#F0B13D] text-white px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-tighter floating-badge">Before/After</div>
+            </div>
+
+            <!-- Item 2: Ambiance -->
+            <div class="gallery-item relative rounded-3xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=2072&auto=format&fit=crop" class="w-full h-auto" alt="Ambiance">
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <span class="text-white/60 text-[9px] font-bold uppercase tracking-widest">Studio</span>
+                <h4 class="text-white font-bold">The Organic Loft</h4>
+              </div>
+            </div>
+
+            <!-- Item 3: CTA Card Interwoven -->
+            <div class="gallery-item bg-[#00AB8E] p-8 rounded-3xl flex flex-col justify-between aspect-[4/5]">
+              <div>
+                <h3 class="text-3xl font-bold text-white tracking-tight leading-tight">
+                  Ready for Your <br/>
+                  <span class="editorial-serif italic text-white/90">Transformation</span>?
+                </h3>
+                <p class="text-white/80 text-sm mt-4">Join the 2,500+ clients who've elevated their aesthetic with Veridia.</p>
+              </div>
+              <a href="#" id="gallery-cta-book" class="w-full py-4 bg-white text-[#00AB8E] rounded-2xl text-center text-xs font-bold uppercase tracking-widest glow-gold hover:scale-[1.02] transition-transform">Book Session</a>
+            </div>
+
+            <!-- Item 4: Transformation 2 -->
+            <div class="gallery-item relative group rounded-3xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1522337363627-5d9c24d3ca5a?q=80&w=2069&auto=format&fit=crop" class="w-full h-auto" alt="Transformation 2">
+              <div class="before-after-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="lucide:scissors" class="text-[#00AB8E]"></iconify-icon>
+                  <span class="text-[10px] text-white font-bold uppercase tracking-widest">Precision Cut</span>
+                </div>
+                <h4 class="text-white font-bold">The Architectural Bob</h4>
+                <p class="text-white/60 text-xs">by Marcus Thorne</p>
+              </div>
+              <div class="absolute top-4 left-4 bg-[#00AB8E] text-white px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-tighter floating-badge">New Result</div>
+            </div>
+
+            <!-- Item 5: Product Ambiance -->
+            <div class="gallery-item relative rounded-3xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=2070&auto=format&fit=crop" class="w-full h-auto" alt="Botanicals">
+              <div class="absolute inset-0 border-[16px] border-white/10 pointer-events-none"></div>
+            </div>
+
+            <!-- Item 6: Team -->
+            <div class="gallery-item relative rounded-3xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1590540179852-2110a54f813a?q=80&w=1974&auto=format&fit=crop" class="w-full h-auto" alt="Team at work">
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-2xl flex items-center gap-2">
+                <iconify-icon icon="lucide:users" class="text-[#00AB8E]"></iconify-icon>
+                <span class="text-[9px] font-bold text-[#0a0a0a] uppercase tracking-widest">Behind Scenes</span>
+              </div>
+            </div>
+
+            <!-- Item 7: Close up -->
+            <div class="gallery-item relative rounded-3xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1787&auto=format&fit=crop" class="w-full h-auto" alt="Detail work">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dark Expansion Section -->
+      <section class="bg-[#0a0a0a] py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+        <!-- Geometric Grid Pattern -->
+        <div class="geometric-grid absolute inset-0 pointer-events-none">
+          <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+          <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+          <div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div><div class="border border-white/5"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center relative z-10">
+          <div>
+            <span class="text-[#F0B13D] text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">Collaboration</span>
+            <h2 class="text-5xl font-bold text-white tracking-tight leading-tight">
+              Share Your <br/>
+              <span class="editorial-serif italic text-white/80">Veridia Moment</span>.
+            </h2>
+            <p class="text-[#929292] mt-8 text-lg leading-relaxed">
+              Captured a new look? Submit your transformation to be featured in our official digital lookbook and receive 10% off your next session.
+            </p>
+            
+            <form class="mt-12 space-y-6 max-w-md">
+              <div class="space-y-2">
+                <label class="text-[10px] uppercase font-bold text-[#929292] tracking-widest">Stylist Name</label>
+                <input type="text" placeholder="Who styled you?" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 text-white text-sm focus:outline-none focus:border-[#00AB8E] transition-all">
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] uppercase font-bold text-[#929292] tracking-widest">Upload Result</label>
+                <div class="w-full h-32 border-2 border-dashed border-white/10 rounded-2xl flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-white/5 transition-all">
+                  <iconify-icon icon="lucide:upload-cloud" class="text-2xl text-[#00AB8E]"></iconify-icon>
+                  <span class="text-xs text-[#929292]">Drag or click to upload photo</span>
+                </div>
+              </div>
+              <button type="submit" id="gallery-submit-photo" class="w-full py-5 bg-[#00AB8E] text-white rounded-2xl font-bold uppercase tracking-widest hover:scale-[1.02] transition-transform">Submit Gallery Entry</button>
+            </form>
+          </div>
+          
+          <div class="relative">
+            <div class="aspect-square rounded-[60px] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover grayscale opacity-40" alt="Atmosphere">
+            </div>
+            <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-[#F0B13D]/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div class="w-24 h-24 rounded-full bg-[#00AB8E] flex items-center justify-center animate-pulse">
+                <iconify-icon icon="lucide:instagram" class="text-white text-4xl"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ambient Quote Section -->
+      <section class="py-32 px-6 md:px-12 lg:px-24 border-b border-[#929292]/10">
+        <div class="max-w-4xl mx-auto text-center">
+          <iconify-icon icon="mdi:format-quote-open" class="text-6xl text-[#00AB8E]/20 mb-8"></iconify-icon>
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+            "Beauty is the <span class="editorial-serif italic">architectural balance</span> between what nature gives and what we nurture."
+          </h2>
+          <div class="mt-8 flex flex-col items-center">
+             <div class="w-12 h-[2px] bg-[#F0B13D] mb-4"></div>
+             <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#929292]">The Veridia Philosophy</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+<div v-scope="{ ...{&quot;cutHref&quot;:&quot;#signature-cut&quot;,&quot;colorHref&quot;:&quot;#botanical-color&quot;,&quot;treatmentHref&quot;:&quot;#scalp-therapy&quot;,&quot;stylingHref&quot;:&quot;#event-styling&quot;,&quot;aboutHref&quot;:&quot;#our-story&quot;,&quot;philosophyHref&quot;:&quot;#sustainability&quot;,&quot;careersHref&quot;:&quot;#careers&quot;,&quot;contactHref&quot;:&quot;#contact&quot;,&quot;instagramHref&quot;:&quot;https://instagram.com&quot;,&quot;facebookHref&quot;:&quot;https://facebook.com&quot;,&quot;linkedinHref&quot;:&quot;https://linkedin.com&quot;}, $emit() {} }">
+<footer class="py-24 px-12 lg:px-24 border-t border-[#929292]/10 bg-white">
+  <div class="grid md:grid-cols-4 gap-12 mb-20">
+    <div class="col-span-1 md:col-span-1">
+      <div class="flex items-center gap-2 mb-8">
+        <div class="w-6 h-6 bg-[#00AB8E] rounded-sm rotate-45"></div>
+        <span class="text-xl font-bold tracking-tighter">VERIDIA.</span>
+      </div>
+      <p class="text-[#929292] text-sm leading-relaxed">
+        Crafting beauty through botanical intelligence. <br/>Part of the Global Eco-Salon Collective.
+      </p>
+    </div>
+    
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Services</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="cutHref" class="hover:text-[#00AB8E] transition-colors">Signature Cut</a></li>
+        <li><a :href="colorHref" class="hover:text-[#00AB8E] transition-colors">Botanical Color</a></li>
+        <li><a :href="treatmentHref" class="hover:text-[#00AB8E] transition-colors">Scalp Therapy</a></li>
+        <li><a :href="stylingHref" class="hover:text-[#00AB8E] transition-colors">Event Styling</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Studio</h6>
+      <ul class="space-y-4 text-[#929292] text-sm">
+        <li><a :href="aboutHref" class="hover:text-[#00AB8E] transition-colors">Our Story</a></li>
+        <li><a :href="philosophyHref" class="hover:text-[#00AB8E] transition-colors">Sustainability</a></li>
+        <li><a :href="careersHref" class="hover:text-[#00AB8E] transition-colors">Careers</a></li>
+        <li><a :href="contactHref" class="hover:text-[#00AB8E] transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <h6 class="font-bold uppercase text-[12px] tracking-widest">Newsletter</h6>
+      <p class="text-[#929292] text-sm">Get seasonal treatment tips and exclusive studio invites.</p>
+      <div class="relative">
+        <input type="email" placeholder="Email Address" class="w-full bg-[#929292]/5 border border-[#929292]/20 py-3 px-4 rounded-lg focus:outline-none focus:border-[#00AB8E] text-sm">
+        <button @click="$emit('subscribe')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00AB8E] font-bold text-sm hover:opacity-80 transition-opacity">Join</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#929292]/10 gap-6">
+    <span class="text-[#929292] text-xs font-medium uppercase tracking-[0.2em]">&copy; 2024 Veridia Hair Artistry. All Rights Reserved.</span>
+    <div class="flex gap-8">
+      <a :href="instagramHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:instagram" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="facebookHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:facebook" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+      <a :href="linkedinHref" class="text-[#929292] hover:text-[#00AB8E] transition-colors">
+        <iconify-icon icon="mdi:linkedin" class="text-xl cursor-pointer"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- /component: Footer (7f842388-3c71-443a-a9c4-b4ef405ab862) -->
+  </div>
+</body>
+</html>
+```
+
+Please reference this design and implement it into our codebase; Try to understand the structure, which part of our codebase is relevant and implement
